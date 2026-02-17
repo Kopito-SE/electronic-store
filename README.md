@@ -1,2 +1,5 @@
-# electronic-store
-Frontend electronics web application
+Project: Electronics Store
+Tech: HTML, CSS, JavaScript
+Methodology: Agile
+Team: Group of 6
+
