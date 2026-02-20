@@ -324,7 +324,7 @@ body {
     color: #64748b;
 }
 
-/* Showcase Section */
+/* Showcase Section - FIXED */
 .showcase {
     padding: 5rem 0;
 }
@@ -343,6 +343,9 @@ body {
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     transition: all 0.3s ease;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .showcase-item:hover {
@@ -350,11 +353,14 @@ body {
     box-shadow: 0 20px 30px rgba(0,0,0,0.12);
 }
 
+/* FIXED: Responsive image styles */
 .showcase-item img {
     width: 100%;
-    height: 200px;
+    height: auto;
+    aspect-ratio: 1/1;
     object-fit: cover;
     transition: transform 0.3s ease;
+    display: block;
 }
 
 .showcase-item:hover img {
@@ -368,10 +374,11 @@ body {
 }
 
 .showcase-item p {
-    padding-bottom: 1rem;
+    padding: 0 1rem 1rem;
     color: #2563eb;
     font-weight: 600;
     font-size: 1.2rem;
+    margin-top: auto;
 }
 
 .showcase-cta {
@@ -508,6 +515,7 @@ body {
 
 .about-image img {
     width: 100%;
+    height: auto;
     border-radius: 24px;
     box-shadow: 0 20px 30px rgba(0,0,0,0.1);
 }
@@ -778,7 +786,7 @@ body {
     }
 }
 
-/* Responsive Design */
+/* Responsive Design - FIXED */
 @media (max-width: 1024px) {
     .categories-grid,
     .showcase-grid {
@@ -845,8 +853,17 @@ body {
         gap: 1rem;
     }
     
+    .countdown-item {
+        min-width: 70px;
+    }
+    
     .footer-links {
         grid-template-columns: 1fr 1fr;
+    }
+    
+    /* Additional responsive fixes */
+    .showcase-item img {
+        aspect-ratio: 1/1;
     }
 }
 
@@ -859,5 +876,21 @@ body {
     
     .container {
         padding: 0 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .sale-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .showcase-item img {
+        max-height: 250px;
     }
 }

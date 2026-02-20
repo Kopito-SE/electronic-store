@@ -95,17 +95,17 @@ function initActiveNav() {
 // Load products dynamically
 function initProducts() {
     const products = [
-        { name: 'iPhone 15 Pro', price: '$999', image: 'https://placehold.co/300x300/2563eb/white?text=iPhone+15' },
-        { name: 'Samsung 65" 4K TV', price: '$1,049', image: 'https://placehold.co/300x300/2563eb/white?text=65%22+4K+TV' },
-        { name: 'MacBook Pro 14"', price: '$1,599', image: 'https://placehold.co/300x300/2563eb/white?text=MacBook+Pro' },
-        { name: 'AirPods Pro 2', price: '$249', image: 'https://placehold.co/300x300/2563eb/white?text=AirPods+Pro' }
+        { name: 'iPhone 16 Pro', price: 'ksh 168,000', image: 'images/3.jpg' }, // Fixed: removed space after .jpg
+        { name: 'Samsung 65" 4K TV', price: 'ksh 139,999', image: 'images/4.jpg' },
+        { name: 'MacBook Pro 14"', price: 'ksh 135,395', image: 'images/5.jpg' },
+        { name: 'Oraimo Airbuds 4', price: 'ksh 2,900', image: 'images/6.jpg' }
     ];
     
     const showcaseGrid = document.getElementById('showcaseGrid');
     if (showcaseGrid) {
         showcaseGrid.innerHTML = products.map(product => `
             <div class="showcase-item" onclick="addToCart('${product.name}', '${product.price}')">
-                <img src="${product.image}" alt="${product.name}">
+                <img src="${product.image}" alt="${product.name}" class="product-image" loading="lazy">
                 <h3>${product.name}</h3>
                 <p>${product.price}</p>
             </div>
