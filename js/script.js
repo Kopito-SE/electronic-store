@@ -127,11 +127,11 @@ function initCart() {
         cartBtn.addEventListener('click', showCart);
     }
     
-    // Checkout button
+    // Checkout button - UPDATED: Changed KCKOF to KEPKOF
     const checkoutBtn = document.getElementById('checkoutBtn');
     if (checkoutBtn) {
         checkoutBtn.addEventListener('click', function() {
-            alert('Thank you for shopping with KCKOF! This is a demo checkout.');
+            alert('Thank you for shopping with KEPKOF! Please enter pin when prompted .');
             closeModal();
         });
     }
