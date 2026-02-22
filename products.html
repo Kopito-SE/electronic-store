@@ -3,218 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KEPKOF ELECTRONIC E BUSINESS - Product Details</title>
-  <link rel="stylesheet" href="css/products styles.css">
+  <title>KEPKOF ELECTRONIC E BUSINESS - Premium Electronics | Home</title>
+  <link rel="stylesheet" href="css/products-styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    .product-detail {
-      max-width: 1000px;
-      margin: 3rem auto;
-      padding: 2rem;
-      background: white;
-      border-radius: 32px;
-      box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-    .product-detail img {
-      width: 100%;
-      border-radius: 24px;
-      object-fit: cover;
-    }
-    .product-detail h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    .product-detail .price-large {
-      font-size: 3rem;
-      color: #0b3b5c;
-      margin: 1rem 0;
-    }
-    .product-detail .price-large::before {
-      content: 'KSh ';
-      font-size: 1.8rem;
-      color: #0dcaf0;
-    }
-    .product-detail .description {
-      font-size: 1.2rem;
-      color: #2c3e50;
-      margin: 1rem 0;
-    }
-    .product-detail button {
-      background: #0dcaf0;
-      border: none;
-      color: #0c1a2b;
-      font-size: 1.3rem;
-      padding: 1rem 2rem;
-      border-radius: 60px;
-      font-weight: bold;
-      cursor: pointer;
-      margin-top: 2rem;
-    }
-    @media (max-width: 700px) {
-      .product-detail { grid-template-columns: 1fr; }
-    }
-  </style>
 </head>
 <body>
-  <header class="main-header">... (same as products index.html) ...</header>
+  <header class="main-header">
+    <div class="logo">
+      <i class="fas fa-bolt"></i> <span>KEPKOF</span>
+      <i class="fas fa-bolt"></i> <span>ELECTRONIC</span>
+      <i class="fas fa-bolt"></i> <span>BUSINESS</span>
+    </div>
+    <nav class="category-nav">
+      <a href="smartphones.html"><i class="fas fa-mobile-alt"></i> Smartphones</a>
+      <a href="televisions.html"><i class="fas fa-tv"></i> Televisions</a>
+      <a href="laptops.html"><i class="fas fa-laptop"></i> Laptops</a>
+      <a href="audio.html"><i class="fas fa-headphones"></i> Audio</a>
+    </nav>
+    <div class="header-icons">
+      <i class="far fa-heart"></i>
+      <i class="far fa-user"></i>
+      <i class="fas fa-shopping-cart"></i>
+    </div>
+  </header>
 
-  <main class="product-detail" id="productDetail">
-    <!-- filled by JavaScript -->
+  <section class="hero">
+    <h1>Premium Electronics <br><span>in Kenya at the best prices</span></h1>
+    <p>• Genuine products • 1‑year warranty</p>
+  </section>
+
+  <main class="product-grid">
+    <h2 class="section-title">Shop by Category</h2>
+
+    <a href="smartphones.html" class="category-card">
+      <i class="fas fa-mobile-alt"></i>
+      <h3>Smartphones</h3>
+      <p>iPhone, Samsung, Tecno, Infinix, Xiaomi</p>
+    </a>
+    <a href="televisions.html" class="category-card">
+      <i class="fas fa-tv"></i>
+      <h3>Televisions</h3>
+      <p>OLED, QLED, 4K, 8K – LG, Sony, Samsung</p>
+    </a>
+    <a href="laptops.html" class="category-card">
+      <i class="fas fa-laptop"></i>
+      <h3>Laptops</h3>
+      <p>MacBook, Dell, HP, Infinix, Tecno</p>
+    </a>
+    <a href="audio.html" class="category-card">
+      <i class="fas fa-headphones"></i>
+      <h3>Audio</h3>
+      <p>Headphones, speakers, Oraimo, JBL</p>
+    </a>
   </main>
-  <script src="js/products script.js"></script>
-  <script>
-    // ---------- PRODUCT DATABASE ----------
-    const products = {
-      // Smartphones
-      "iPhone 15 Pro": {
-        img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&auto=format",
-        description: "6.1\" Super Retina XDR display, A17 Pro chip, 256GB storage, Titanium design, 48MP main camera.",
-        price: 159999
-      },
-      "Samsung Galaxy S24 Ultra": {
-        img: "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=800&auto=format",
-        description: "6.8\" Dynamic AMOLED 2X, 200MP camera, 512GB, built-in S Pen, Snapdragon 8 Gen 3.",
-        price: 145500
-      },
-      "Xiaomi 14 Ultra": {
-        img: "https://images.unsplash.com/photo-1616348436168-70420903f9a0?w=800&auto=format",
-        description: "6.73\" AMOLED, Leica quad camera, 16GB RAM, 512GB storage, Snapdragon 8 Gen 3.",
-        price: 129999
-      },
-      "Tecno Camon 30 Premier": {
-        img: "https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=800&auto=format",
-        description: "6.77\" FHD+ 120Hz display, 50MP periscope camera, 12GB RAM, 256GB storage.",
-        price: 58999
-      },
-      "Infinix Note 40 Pro": {
-        img: "https://images.unsplash.com/photo-1616348436168-70420903f9a0?w=800&auto=format",
-        description: "6.78\" AMOLED 120Hz, 108MP main camera, 8GB RAM, 256GB storage, 45W fast charging.",
-        price: 42999
-      },
-      "Google Pixel 8 Pro": {
-        img: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=800&auto=format",
-        description: "6.7\" LTPO OLED, Tensor G3 chip, 128GB storage, Bay Blue, 50MP triple camera.",
-        price: 112800
-      },
-
-      // Televisions
-      "LG OLED C3 65": {
-        img: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=800&auto=format",
-        description: "65\" 4K OLED, α9 Gen6 AI Processor, Dolby Vision, Dolby Atmos, smart TV.",
-        price: 289000
-      },
-      "Samsung Neo QLED 55": {
-        img: "https://images.unsplash.com/photo-1601944179066-29786cb9d32a?w=800&auto=format",
-        description: "55\" 8K upscaling, Quantum HDR 32x, Object Tracking Sound, Neo Quantum Processor.",
-        price: 215500
-      },
-      "Sony Bravia XR 65": {
-        img: "https://images.unsplash.com/photo-1587418121057-1c6c0a6d3f9b?w=800&auto=format",
-        description: "65\" Cognitive XR Processor, Google TV, Acoustic Multi-Audio, 4K HDR.",
-        price: 327999
-      },
-      "Xiaomi Mi TV 5 55": {
-        img: "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=800&auto=format",
-        description: "55\" 4K QLED, 120Hz MEMC, Dolby Atmos, PatchWall, Android TV.",
-        price: 89999
-      },
-      "TCL 65C745": {
-        img: "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=800&auto=format",
-        description: "65\" QLED 4K, 144Hz Game Accelerator, Google TV, Dolby Vision, Onkyo sound.",
-        price: 139500
-      },
-      "Hisense 55U8K": {
-        img: "https://images.unsplash.com/photo-1587418121057-1c6c0a6d3f9b?w=800&auto=format",
-        description: "55\" Mini‑LED 4K, 144Hz, Dolby Vision IQ, Hi‑View Engine, smart TV.",
-        price: 124999
-      },
-
-      // Laptops
-      "MacBook Pro 14": {
-        img: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&auto=format",
-        description: "14\" Liquid Retina XDR, M3 Pro chip, 18GB RAM, 512GB SSD, Space Black.",
-        price: 329500
-      },
-      "Dell XPS 15": {
-        img: "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=800&auto=format",
-        description: "15.6\" OLED, Intel i9, NVIDIA RTX 4060, 32GB RAM, 1TB SSD, Windows 11.",
-        price: 279990
-      },
-      "HP Spectre x360": {
-        img: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=800&auto=format",
-        description: "13.5\" 3K2K touch, 2‑in‑1, Intel i7, 16GB RAM, 1TB SSD, Windows 11.",
-        price: 189300
-      },
-      "Infinix INBook Y2 Plus": {
-        img: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=800&auto=format",
-        description: "14\" FHD, Intel i5, 16GB RAM, 512GB SSD, Windows 11, lightweight.",
-        price: 65999
-      },
-      "Tecno Megabook T1": {
-        img: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=800&auto=format",
-        description: "15.6\" FHD, Intel i3, 8GB RAM, 256GB SSD, Windows 11, silver.",
-        price: 45999
-      },
-      "Xiaomi Mi Notebook Ultra": {
-        img: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=800&auto=format",
-        description: "15.6\" 3.2K 90Hz, Intel i7, 16GB RAM, 512GB SSD, Windows 11.",
-        price: 114999
-      },
-
-      // Audio
-      "Sony WH-1000XM5": {
-        img: "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800&auto=format",
-        description: "Wireless noise cancelling headphones, 30h battery, LDAC, multipoint.",
-        price: 42500
-      },
-      "Bose QC Ultra": {
-        img: "https://images.unsplash.com/photo-1620912189862-2b9f2558cf8c?w=800&auto=format",
-        description: "Immersive Audio, Spatial Sound, adjustable ANC, 24h battery.",
-        price: 48900
-      },
-      "JBL Charge 5": {
-        img: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=800&auto=format",
-        description: "Portable Bluetooth speaker, 20h playtime, powerbank, IPX7.",
-        price: 18200
-      },
-      "Oraimo BoomPop 2": {
-        img: "https://images.unsplash.com/photo-1620912189862-2b9f2558cf8c?w=800&auto=format",
-        description: "20W Bluetooth speaker, RGB lights, IPX7, 15h playtime, TWS pairing.",
-        price: 5999
-      },
-      "Oraimo FreePods 4": {
-        img: "https://images.unsplash.com/photo-1620912189862-2b9f2558cf8c?w=800&auto=format",
-        description: "True wireless earbuds, ENC, 30h case, Bluetooth 5.3, touch control.",
-        price: 3499
-      },
-      "Xiaomi Mi TW Earphones 2 Basic": {
-        img: "https://images.unsplash.com/photo-1620912189862-2b9f2558cf8c?w=800&auto=format",
-        description: "14.2mm drivers, touch control, 20h battery, Bluetooth 5.0.",
-        price: 2999
-      }
-    };
-
-    // Get product name from URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const productName = urlParams.get('name') || 'iPhone 15 Pro';
-    const product = products[productName];
-
-    if (product) {
-      document.getElementById('productDetail').innerHTML = `
-        <img src="${product.img}" alt="${productName}">
-        <div>
-          <h1>${productName}</h1>
-          <p class="description">${product.description}</p>
-          <p class="price-large">${product.price.toLocaleString('en-KE')}</p>
-          <button onclick="alert('Added to cart (demo) \uD83D\uDCE6')"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-        </div>
-      `;
-    } else {
-      document.getElementById('productDetail').innerHTML = '<p style="grid-column:span2; text-align:center; font-size:1.5rem;">Product not found.</p>';
-    }
-  </script>
+  <script src="js/products-script.js"></script>
 </body>
 </html>
