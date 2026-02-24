@@ -25,9 +25,9 @@ body {
 }
 
 .logo {
-  font-size: 1.9rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.2px;
 }
 .logo i {
   color: #0dcaf0;
