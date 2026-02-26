@@ -880,7 +880,7 @@ body {
 }
 
 /* Responsive Design - FIXED */
-@media (max-width: 1024px) {
+@media (max-width: 1028px) {
     .categories-grid,
     .showcase-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -985,5 +985,16 @@ body {
     
     .showcase-item img {
         max-height: 250px;
+    }
+}
+@media (max-width: 768px) {
+    .hero {
+        height: 60vh; /* reduce height on phone */
+        background-position: top; /* focus on top of image */
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 27px; /* smaller text */
     }
 }
