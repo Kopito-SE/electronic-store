@@ -173,7 +173,7 @@ body {
     color: white;
     border-radius: 50%;
     padding: 0.1rem 0.5rem;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     margin-left: 0.2rem;
 }
 
@@ -183,24 +183,24 @@ body {
       rgba(0,0,0,0.6),
       rgba(0,0,0,0.6)
     ),
-    url("../images/hero.jpg");
+    url("../images/hero1.jpg");
   background-size: cover;
   background-position: center;
-  padding: 5rem 0;
+  padding: 7rem 0 ;
   color: white;
 }
 
 
 .hero-content {
     text-align: center;
-    max-width: 800px;
+    max-width: 1024px;
     margin: 0 auto;
 }
 
 .hero h1 {
     font-size: 3.5rem;
-    color: #FFD700;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    color: #bea92d;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 1rem;
@@ -208,18 +208,19 @@ body {
 }
 
 .hero .highlight {
-    color: #ffd700;
+    color: #cab53e;
 }
 
 .hero-subtitle {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
     opacity: 0.9;
     animation: fadeInUp 0.8s ease 0.2s both;
 }
 
 .hero-description {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
+    background-color: #b0bb11;
     margin-bottom: 2rem;
     opacity: 0.8;
     animation: fadeInUp 0.8s ease 0.4s both;
