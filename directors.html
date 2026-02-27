@@ -1,9 +1,108 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Diectors</title>
-    </head>
-    <body>
-        <h>This is the Directors Page</h>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Directors | Company Name</title>
+    <link rel="stylesheet" href="css/directors.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h2>KEPKOF</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Gallery</a></li>
+                <li><a href="directors.html" class="active">Directors</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Our Board of Directors</h1>
+            <p>Meet the visionary leaders behind our success</p>
+        </div>
+    </header>
+
+    <!-- Directors Grid Section -->
+    <section class="directors-grid">
+        <div class="container">
+            <div class="grid-container" id="directorsGrid">
+                <!-- Director cards will be dynamically loaded here via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Leadership Info -->
+    <section class="leadership-info">
+        <div class="container">
+            <div class="info-content">
+                <h2>Why Our Leadership Matters</h2>
+                <p>Our board of directors brings decades of combined experience in the automotive industry, ensuring that Company Name remains at the forefront of innovation and customer satisfaction. Each director is committed to steering our company toward a future of excellence and sustainable growth.</p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Years Combined Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">6</span>
+                        <span class="stat-label">Expert Directors</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">Industry Awards</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>KEPKOF</h3>
+                    <p>Your trusted partner in Electronics excellence since 2021.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="directors.html">Directors</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 KEPKOF. All rights reserved.</p>
+            </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/directors.js"></script>
+</body>
 </html>
