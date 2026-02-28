@@ -5,7 +5,7 @@ const directorsData = [
         name: "COLYNS KIPLANGAT",
         title: "Chief Executive Officer",
         expertise: "Strategic Planning & Business Development",
-        image: "https://via.placeholder.com/400x400?text=Colyns+Kiplangat",
+        image: "../images/chiefexecutive.jpg",
         profileUrl: "colyns.html",
         description: "5+ years of experience in electronics industry"
     },
@@ -14,8 +14,8 @@ const directorsData = [
         name: "ODHIAMBO SETH",
         title: "Chief Operating Officer",
         expertise: "Operations & Supply Chain Management",
-        image: "https://via.placeholder.com/400x400?text=Sarah+Johnson",
-        profileUrl: "odhiambo.html",
+        image: "../images/chiefoperating.jpg",
+        profileUrl: "directors/odhiambo.html",
         description: "Expert in global supply chain optimization"
     },
     {
@@ -24,7 +24,7 @@ const directorsData = [
         title: "Chief Financial Officer",
         expertise: "Financial Strategy & Investment",
         image: "https://via.placeholder.com/400x400?text=Michael+Chen",
-        profileUrl: "preston.html",
+        profileUrl: "directors/preston.html",
         description: "Former investment banker with Electronic focus"
     },
     {
@@ -33,7 +33,7 @@ const directorsData = [
         title: "Chief Marketing Officer",
         expertise: "Brand Strategy & Digital Marketing",
         image: "https://via.placeholder.com/400x400?text=Emily+Rodriguez",
-        profileUrl: "castro.html",
+        profileUrl: "directors/castro.html",
         description: "Award-winning marketing strategist"
     },
     {
@@ -42,7 +42,7 @@ const directorsData = [
         title: "Chief Technology Officer",
         expertise: "Innovation & Product Development",
         image: "https://via.placeholder.com/400x400?text=David+Kim",
-        profileUrl: "kevin.html",
+        profileUrl: "directors/kevin.html",
         description: "Former tech startup founder with AI expertise"
     },
         
@@ -52,7 +52,7 @@ const directorsData = [
         title: "Chief Marketing Officer",
         expertise: "Talent Development & Corporate Culture",
         image: "https://via.placeholder.com/400x400?text=Emily+Rodriguez",
-        profileUrl: "eugene.html",
+        profileUrl: "directors/eugene.html",
         description: "Expert in building high-performance teams"
     }
 
