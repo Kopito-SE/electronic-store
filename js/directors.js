@@ -1,17 +1,34 @@
-// Director Data - In a real application, this might come from an API
+/**
+ * KEPKOF Directors Page - Optimized JavaScript
+ * Features: Performance, accessibility, mobile responsiveness
+ */
+
+// ============================================
+// CONFIGURATION
+// ============================================
+const CONFIG = {
+    animationDelay: 100,
+    statsDuration: 2000,
+    toastDuration: 3000,
+    searchDebounce: 300
+};
+
+// ============================================
+// DATA
+// ============================================
 const directorsData = [
     {
         id: 1,
-        name: "COLYNS KIPLANGAT",
+        name: "Colyns Kiplangat",
         title: "Chief Executive Officer",
         expertise: "Strategic Planning & Business Development",
         image: "../images/chiefexecutive.jpg",
         profileUrl: "colyns.html",
-        description: "5+ years of experience in electronics industry"
+        description: "5+ years of experience in electronics industry leadership"
     },
     {
         id: 2,
-        name: "ODHIAMBO SETH",
+        name: "Odhiambo Seth",
         title: "Chief Operating Officer",
         expertise: "Operations & Supply Chain Management",
         image: "../images/chiefoperating.jpg",
@@ -20,225 +37,450 @@ const directorsData = [
     },
     {
         id: 3,
-        name: "PRESTON KIPROTICH",
+        name: "Preston Kiprotich",
         title: "Chief Financial Officer",
         expertise: "Financial Strategy & Investment",
-        image: "https://via.placeholder.com/400x400?text=Michael+Chen",
+        image: "../images/chieffinancial.jpg",
         profileUrl: "directors/preston.html",
-        description: "Former investment banker with Electronic focus"
+        description: "Former investment banker with electronics focus"
     },
     {
         id: 4,
-        name: "FIDEL CASTRO OTIENO",
+        name: "Fidel Castro Otieno",
         title: "Chief Marketing Officer",
         expertise: "Brand Strategy & Digital Marketing",
-        image: "https://via.placeholder.com/400x400?text=Emily+Rodriguez",
+        image: "../images/chiefmarketing.jpg",
         profileUrl: "directors/castro.html",
         description: "Award-winning marketing strategist"
     },
     {
         id: 5,
-        name: "KEVIN KIPTOO",
+        name: "Kevin Kiptoo",
         title: "Chief Technology Officer",
         expertise: "Innovation & Product Development",
-        image: "https://via.placeholder.com/400x400?text=David+Kim",
+        image: "../images/chieftechnology.jpg",
         profileUrl: "directors/kevin.html",
         description: "Former tech startup founder with AI expertise"
     },
-        
     {
         id: 6,
-        name: "EUGENE KHATETE",
-        title: "Chief Marketing Officer",
-        expertise: "Talent Development & Corporate Culture",
-        image: "https://via.placeholder.com/400x400?text=Emily+Rodriguez",
+        name: "Eugene Khatete",
+        title: "Chief Information Systems Officer",
+        expertise: "IT Infrastructure & Digital Transformation",
+        image: "../images/chiefinformation.jpg",
         profileUrl: "directors/eugene.html",
-        description: "Expert in building high-performance teams"
+        description: "Expert in building high-performance tech teams"
     }
-
 ];
 
-// Function to create director cards
-function createDirectorCards() {
-    const gridContainer = document.getElementById('directorsGrid');
+// ============================================
+// STATE MANAGEMENT
+// ============================================
+const state = {
+    isMenuOpen: false,
+    searchTerm: '',
+    filteredDirectors: [...directorsData]
+};
+
+// ============================================
+// DOM ELEMENTS CACHE
+// ============================================
+const elements = {};
+
+function cacheElements() {
+    const ids = [
+        'directorsGrid', 'hamburger', 'navLinks', 'directorSearch',
+        'noResults', 'toast', 'toastMessage'
+    ];
     
-    if (!gridContainer) return;
+    ids.forEach(id => {
+        elements[id] = document.getElementById(id);
+    });
     
-    directorsData.forEach(director => {
-        const card = document.createElement('div');
-        card.className = 'director-card';
-        
-        card.innerHTML = `
-            <div class="card-image">
-                <img src="${director.image}" alt="${director.name}">
-            </div>
-            <div class="card-content">
-                <h3>${director.name}</h3>
-                <div class="director-title">${director.title}</div>
-                <div class="director-expertise">${director.expertise}</div>
-                <p style="color: #666; margin-bottom: 1rem; font-style: italic;">"${director.description}"</p>
-                <button class="view-profile-btn" onclick="navigateToProfile('${director.profileUrl}')">
-                    View Full Profile
-                </button>
-            </div>
-        `;
-        
-        gridContainer.appendChild(card);
+    elements.statNumbers = document.querySelectorAll('.stat-number');
+    elements.navLinks = document.querySelectorAll('.nav-links a');
+}
+
+// ============================================
+// UTILITY FUNCTIONS
+// ============================================
+const utils = {
+    debounce: (func, wait) => {
+        let timeout;
+        return (...args) => {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(this, args), wait);
+        };
+    },
+
+    formatNumber: (num) => num.toLocaleString(),
+
+    sanitizeHTML: (str) => {
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+    }
+};
+
+// ============================================
+// DIRECTOR CARDS
+// ============================================
+function createDirectorCard(director, index) {
+    const card = document.createElement('article');
+    card.className = 'director-card';
+    card.style.animationDelay = `${index * CONFIG.animationDelay}ms`;
+    card.setAttribute('role', 'listitem');
+    
+    const safeName = utils.sanitizeHTML(director.name);
+    const safeTitle = utils.sanitizeHTML(director.title);
+    const safeExpertise = utils.sanitizeHTML(director.expertise);
+    const safeDescription = utils.sanitizeHTML(director.description);
+    
+    card.innerHTML = `
+        <div class="card-image">
+            <img src="${director.image}" 
+                 alt="Portrait of ${safeName}, ${safeTitle}" 
+                 loading="lazy"
+                 onerror="this.src='../images/placeholder-director.jpg'">
+        </div>
+        <div class="card-content">
+            <h3>${safeName}</h3>
+            <div class="director-title">${safeTitle}</div>
+            <div class="director-expertise">${safeExpertise}</div>
+            <p class="director-description">"${safeDescription}"</p>
+            <button class="view-profile-btn" onclick="navigateToProfile('${director.profileUrl}')" type="button">
+                View Full Profile
+            </button>
+        </div>
+    `;
+    
+    // Add click handler to entire card for better UX
+    card.addEventListener('click', (e) => {
+        if (!e.target.closest('button')) {
+            navigateToProfile(director.profileUrl);
+        }
+    });
+    
+    // Keyboard accessibility
+    card.setAttribute('tabindex', '0');
+    card.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            navigateToProfile(director.profileUrl);
+        }
+    });
+    
+    return card;
+}
+
+function renderDirectors(directors) {
+    const grid = elements.directorsGrid;
+    if (!grid) return;
+    
+    grid.innerHTML = '';
+    
+    if (directors.length === 0) {
+        showNoResults(true);
+        return;
+    }
+    
+    showNoResults(false);
+    
+    directors.forEach((director, index) => {
+        grid.appendChild(createDirectorCard(director, index));
     });
 }
 
-// Navigation function for profile pages
-function navigateToProfile(url) {
-    window.location.href = url;
-}
-
-// Mobile menu toggle
-function initializeMobileMenu() {
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    
-    if (hamburger && navLinks) {
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-                navLinks.classList.remove('active');
-            }
-        });
+function showNoResults(show) {
+    if (elements.noResults) {
+        elements.noResults.hidden = !show;
+    }
+    if (elements.directorsGrid) {
+        elements.directorsGrid.style.display = show ? 'none' : 'grid';
     }
 }
 
-// Smooth scroll for anchor links
-function initializeSmoothScroll() {
+// ============================================
+// NAVIGATION
+// ============================================
+function navigateToProfile(url) {
+    // Show loading toast
+    showToast('Loading profile...');
+    
+    // Small delay for UX
+    setTimeout(() => {
+        window.location.href = url;
+    }, 300);
+}
+
+// ============================================
+// MOBILE MENU
+// ============================================
+function initMobileMenu() {
+    if (!elements.hamburger || !elements.navLinks) return;
+    
+    elements.hamburger.addEventListener('click', toggleMobileMenu);
+    
+    // Close on link click
+    elements.navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+    });
+    
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+        if (state.isMenuOpen && 
+            !elements.hamburger.contains(e.target) && 
+            !elements.navLinks.contains(e.target)) {
+            closeMobileMenu();
+        }
+    });
+    
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && state.isMenuOpen) {
+            closeMobileMenu();
+        }
+    });
+}
+
+function toggleMobileMenu() {
+    state.isMenuOpen = !state.isMenuOpen;
+    elements.navLinks.classList.toggle('active', state.isMenuOpen);
+    elements.hamburger.setAttribute('aria-expanded', state.isMenuOpen);
+    
+    const icon = elements.hamburger.querySelector('i');
+    if (icon) {
+        icon.className = state.isMenuOpen ? 'fas fa-times' : 'fas fa-bars';
+    }
+    
+    document.body.style.overflow = state.isMenuOpen ? 'hidden' : '';
+}
+
+function closeMobileMenu() {
+    if (!state.isMenuOpen) return;
+    state.isMenuOpen = false;
+    elements.navLinks.classList.remove('active');
+    elements.hamburger.setAttribute('aria-expanded', 'false');
+    
+    const icon = elements.hamburger.querySelector('i');
+    if (icon) icon.className = 'fas fa-bars';
+    
+    document.body.style.overflow = '';
+}
+
+// ============================================
+// SEARCH/FILTER
+// ============================================
+function initSearch() {
+    if (!elements.directorSearch) return;
+    
+    const debouncedSearch = utils.debounce((searchTerm) => {
+        performSearch(searchTerm);
+    }, CONFIG.searchDebounce);
+    
+    elements.directorSearch.addEventListener('input', (e) => {
+        debouncedSearch(e.target.value.trim());
+    });
+    
+    // Clear search on escape
+    elements.directorSearch.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            elements.directorSearch.value = '';
+            performSearch('');
+            elements.directorSearch.blur();
+        }
+    });
+}
+
+function performSearch(searchTerm) {
+    state.searchTerm = searchTerm.toLowerCase();
+    
+    if (!state.searchTerm) {
+        state.filteredDirectors = [...directorsData];
+    } else {
+        state.filteredDirectors = directorsData.filter(director => 
+            director.name.toLowerCase().includes(state.searchTerm) ||
+            director.title.toLowerCase().includes(state.searchTerm) ||
+            director.expertise.toLowerCase().includes(state.searchTerm)
+        );
+    }
+    
+    renderDirectors(state.filteredDirectors);
+    
+    // Announce results to screen readers
+    announceSearchResults(state.filteredDirectors.length);
+}
+
+function announceSearchResults(count) {
+    const announcement = document.createElement('div');
+    announcement.setAttribute('role', 'status');
+    announcement.setAttribute('aria-live', 'polite');
+    announcement.className = 'visually-hidden';
+    announcement.textContent = count === 0 
+        ? 'No directors found matching your search.' 
+        : `Found ${count} director${count !== 1 ? 's' : ''}.`;
+    
+    document.body.appendChild(announcement);
+    setTimeout(() => announcement.remove(), 1000);
+}
+
+// ============================================
+// STATS COUNTER
+// ============================================
+function initStatsCounter() {
+    if (!elements.statNumbers.length) return;
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateStats();
+                observer.disconnect();
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    const statsSection = document.querySelector('.stats');
+    if (statsSection) observer.observe(statsSection);
+}
+
+function animateStats() {
+    elements.statNumbers.forEach(stat => {
+        const target = parseInt(stat.dataset.target);
+        const suffix = stat.textContent.includes('+') ? '+' : '';
+        const duration = CONFIG.statsDuration;
+        const steps = 60;
+        const increment = target / steps;
+        let current = 0;
+        let step = 0;
+        
+        const timer = setInterval(() => {
+            step++;
+            current = Math.min(Math.floor(increment * step), target);
+            stat.textContent = current + suffix;
+            
+            if (step >= steps) {
+                stat.textContent = target + suffix;
+                clearInterval(timer);
+            }
+        }, duration / steps);
+    });
+}
+
+// ============================================
+// TOAST NOTIFICATIONS
+// ============================================
+function showToast(message, type = 'info') {
+    if (!elements.toast || !elements.toastMessage) return;
+    
+    elements.toastMessage.textContent = message;
+    elements.toast.classList.add('show');
+    
+    // Update icon based on type
+    const icon = elements.toast.querySelector('i');
+    if (icon) {
+        icon.className = type === 'error' ? 'fas fa-exclamation-circle' : 'fas fa-info-circle';
+    }
+    
+    clearTimeout(elements.toast.timeout);
+    elements.toast.timeout = setTimeout(() => {
+        elements.toast.classList.remove('show');
+    }, CONFIG.toastDuration);
+}
+
+// ============================================
+// ACTIVE NAVIGATION
+// ============================================
+function setActiveNav() {
+    const currentPage = window.location.pathname.split('/').pop() || 'directors.html';
+    
+    elements.navLinks?.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+            link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
+        } else {
+            link.classList.remove('active');
+            link.removeAttribute('aria-current');
+        }
+    });
+}
+
+// ============================================
+// SMOOTH SCROLL
+// ============================================
+function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const target = document.querySelector(targetId);
             if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+                e.preventDefault();
+                const offset = target.offsetTop - 80;
+                window.scrollTo({
+                    top: offset,
+                    behavior: 'smooth'
                 });
             }
         });
     });
 }
 
-// Lazy loading images
-function initializeLazyLoading() {
-    const images = document.querySelectorAll('img[data-src]');
+// ============================================
+// IMAGE LAZY LOADING FALLBACK
+// ============================================
+function initLazyLoading() {
+    if ('loading' in HTMLImageElement.prototype) {
+        // Browser supports native lazy loading
+        return;
+    }
+    
+    // Fallback for older browsers
     const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const img = entry.target;
-                img.src = img.dataset.src;
-                img.removeAttribute('data-src');
+                if (img.dataset.src) {
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                }
                 observer.unobserve(img);
             }
         });
     });
     
-    images.forEach(img => imageObserver.observe(img));
-}
-
-// Page load animation
-function initializePageAnimations() {
-    const cards = document.querySelectorAll('.director-card');
-    cards.forEach((card, index) => {
-        card.style.animation = `fadeInUp 0.5s ease forwards ${index * 0.1}s`;
+    document.querySelectorAll('img[data-src]').forEach(img => {
+        imageObserver.observe(img);
     });
 }
 
-// Add animation styles
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
+// ============================================
+// INITIALIZATION
+// ============================================
+function init() {
+    cacheElements();
+    renderDirectors(directorsData);
+    initMobileMenu();
+    initSearch();
+    initStatsCounter();
+    initSmoothScroll();
+    initLazyLoading();
+    setActiveNav();
     
-    .director-card {
-        opacity: 0;
-    }
-`;
-document.head.appendChild(style);
-
-// Initialize everything when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    createDirectorCards();
-    initializeMobileMenu();
-    initializeSmoothScroll();
-    initializeLazyLoading();
-    initializePageAnimations();
-    
-    // Add active class to current nav item
-    const currentPage = window.location.pathname.split('/').pop();
-    const navLinks = document.querySelectorAll('.nav-links a');
-    navLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-            link.classList.add('active');
+    // Handle resize
+    window.addEventListener('resize', utils.debounce(() => {
+        if (window.innerWidth > 1024 && state.isMenuOpen) {
+            closeMobileMenu();
         }
-    });
-});
-
-// Optional: Add search/filter functionality
-function filterDirectors(searchTerm) {
-    const filteredDirectors = directorsData.filter(director => 
-        director.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        director.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        director.expertise.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    
-    updateDirectorsGrid(filteredDirectors);
+    }, 250));
 }
 
-function updateDirectorsGrid(directors) {
-    const gridContainer = document.getElementById('directorsGrid');
-    if (!gridContainer) return;
-    
-    gridContainer.innerHTML = '';
-    
-    if (directors.length === 0) {
-        gridContainer.innerHTML = '<p style="text-align: center; grid-column: 1/-1;">No directors found</p>';
-        return;
-    }
-    
-    directors.forEach(director => {
-        const card = document.createElement('div');
-        card.className = 'director-card';
-        
-        card.innerHTML = `
-            <div class="card-image">
-                <img src="${director.image}" alt="${director.name}">
-            </div>
-            <div class="card-content">
-                <h3>${director.name}</h3>
-                <div class="director-title">${director.title}</div>
-                <div class="director-expertise">${director.expertise}</div>
-                <button class="view-profile-btn" onclick="navigateToProfile('${director.profileUrl}')">
-                    View Full Profile
-                </button>
-            </div>
-        `;
-        
-        gridContainer.appendChild(card);
-    });
+// Start when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    init();
 }
 
-// Export functions if using modules
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = {
-        directorsData,
-        createDirectorCards,
-        filterDirectors
-    };
-}
+// Expose necessary functions globally
+window.navigateToProfile = navigateToProfile;
