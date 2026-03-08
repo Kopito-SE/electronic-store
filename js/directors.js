@@ -22,8 +22,8 @@ const directorsData = [
         name: "Colyns Kiplangat",
         title: "Chief Executive Officer",
         expertise: "Strategic Planning & Business Development",
-        image: "../images/chiefexecutive.jpg",
-        profileUrl: "colyns.html",
+        image: "images/chiefexecutive.jpg",
+        profileUrl: "directors/colyns.html",
         description: "5+ years of experience in electronics industry leadership"
     },
     {
@@ -31,7 +31,7 @@ const directorsData = [
         name: "Odhiambo Seth",
         title: "Chief Operating Officer",
         expertise: "Operations & Supply Chain Management",
-        image: "../images/chiefoperating.jpg",
+        image: "images/chiefoperating.jpg",
         profileUrl: "directors/odhiambo.html",
         description: "Expert in global supply chain optimization"
     },
@@ -40,7 +40,7 @@ const directorsData = [
         name: "Preston Kiprotich",
         title: "Chief Financial Officer",
         expertise: "Financial Strategy & Investment",
-        image: "../images/chieffinancial.jpg",
+        image: "images/chieffinancial.jpg",
         profileUrl: "directors/preston.html",
         description: "Former investment banker with electronics focus"
     },
@@ -49,7 +49,7 @@ const directorsData = [
         name: "Fidel Castro Otieno",
         title: "Chief Marketing Officer",
         expertise: "Brand Strategy & Digital Marketing",
-        image: "../images/chiefmarketing.jpg",
+        image: "images/chiefmarketing.jpg",
         profileUrl: "directors/castro.html",
         description: "Award-winning marketing strategist"
     },
@@ -58,7 +58,7 @@ const directorsData = [
         name: "Kevin Kiptoo",
         title: "Chief Technology Officer",
         expertise: "Innovation & Product Development",
-        image: "../images/chieftechnology.jpg",
+        image: "images/chieftechnology.jpg",
         profileUrl: "directors/kevin.html",
         description: "Former tech startup founder with AI expertise"
     },
@@ -67,7 +67,7 @@ const directorsData = [
         name: "Eugene Khatete",
         title: "Chief Information Systems Officer",
         expertise: "IT Infrastructure & Digital Transformation",
-        image: "../images/chiefinformation.jpg",
+        image: "images/chiefinformation.jpg",
         profileUrl: "directors/eugene.html",
         description: "Expert in building high-performance tech teams"
     }
@@ -89,7 +89,7 @@ const elements = {};
 
 function cacheElements() {
     const ids = [
-        'directorsGrid', 'hamburger', 'navLinks', 'directorSearch',
+        'directorsGrid', 'hamburger', 'directorSearch',
         'noResults', 'toast', 'toastMessage'
     ];
     
@@ -97,6 +97,7 @@ function cacheElements() {
         elements[id] = document.getElementById(id);
     });
     
+    elements.navMenu = document.getElementById('navLinks');
     elements.statNumbers = document.querySelectorAll('.stat-number');
     elements.navLinks = document.querySelectorAll('.nav-links a');
 }
@@ -141,7 +142,7 @@ function createDirectorCard(director, index) {
             <img src="${director.image}" 
                  alt="Portrait of ${safeName}, ${safeTitle}" 
                  loading="lazy"
-                 onerror="this.src='../images/placeholder-director.jpg'">
+                 onerror="this.src='images/directors.jpg'">
         </div>
         <div class="card-content">
             <h3>${safeName}</h3>
@@ -216,12 +217,12 @@ function navigateToProfile(url) {
 // MOBILE MENU
 // ============================================
 function initMobileMenu() {
-    if (!elements.hamburger || !elements.navLinks) return;
+    if (!elements.hamburger || !elements.navMenu) return;
     
     elements.hamburger.addEventListener('click', toggleMobileMenu);
     
     // Close on link click
-    elements.navLinks.querySelectorAll('a').forEach(link => {
+    elements.navLinks.forEach(link => {
         link.addEventListener('click', closeMobileMenu);
     });
     
@@ -229,7 +230,7 @@ function initMobileMenu() {
     document.addEventListener('click', (e) => {
         if (state.isMenuOpen && 
             !elements.hamburger.contains(e.target) && 
-            !elements.navLinks.contains(e.target)) {
+            !elements.navMenu.contains(e.target)) {
             closeMobileMenu();
         }
     });
@@ -244,7 +245,7 @@ function initMobileMenu() {
 
 function toggleMobileMenu() {
     state.isMenuOpen = !state.isMenuOpen;
-    elements.navLinks.classList.toggle('active', state.isMenuOpen);
+    elements.navMenu.classList.toggle('active', state.isMenuOpen);
     elements.hamburger.setAttribute('aria-expanded', state.isMenuOpen);
     
     const icon = elements.hamburger.querySelector('i');
@@ -258,7 +259,7 @@ function toggleMobileMenu() {
 function closeMobileMenu() {
     if (!state.isMenuOpen) return;
     state.isMenuOpen = false;
-    elements.navLinks.classList.remove('active');
+    elements.navMenu.classList.remove('active');
     elements.hamburger.setAttribute('aria-expanded', 'false');
     
     const icon = elements.hamburger.querySelector('i');
@@ -484,3 +485,5 @@ if (document.readyState === 'loading') {
 
 // Expose necessary functions globally
 window.navigateToProfile = navigateToProfile;
+
+

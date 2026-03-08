@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KEPKOF ELECTRONIC E BUSINESS - Product Details</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --card: #ffffff;
+      --muted: #6b7280;
+      --text: #111827;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(160deg, #f8fafc 0%, #e2e8f0 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .top-nav {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: var(--accent);
+      border: 1px solid var(--border);
+      background: #fff;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-weight: 600;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      background: var(--card);
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      padding: 24px;
+    }
+
+    .image-box {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      background: #f8fafc;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      max-height: 420px;
+    }
+
+    .title {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      margin-bottom: 10px;
+    }
+
+    .price {
+      color: var(--accent);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .meta {
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 10px;
+      padding: 12px 18px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+    }
+
+    .btn-secondary {
+      background: #f3f4f6;
+      color: #111827;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .notice {
+      margin-top: 16px;
+      color: #065f46;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      border-radius: 10px;
+      padding: 10px 12px;
+      display: none;
+    }
+
+    .notice.show {
+      display: block;
+    }
+
+    @media (min-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <nav class="top-nav" aria-label="Breadcrumb">
+      <a class="link-btn" href="products.html"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back to Categories</a>
+      <a class="link-btn" href="index.html#products">Home Products</a>
+    </nav>
+
+    <section class="layout" aria-live="polite">
+      <div class="image-box">
+        <img id="productImage" src="images/whatweofer.png" alt="Product image" loading="lazy">
+      </div>
+
+      <div>
+        <h1 class="title" id="productName">Product</h1>
+        <p class="price" id="productPrice">KES 0</p>
+        <p class="meta" id="productDescription">Select a product from our catalog to view details.</p>
+
+        <div class="actions">
+          <button id="addToCartBtn" class="btn btn-primary" type="button">Add to Cart</button>
+          <a class="btn btn-secondary" href="index.html#contact">Talk to Sales</a>
+        </div>
+        <p id="statusMessage" class="notice" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const PRODUCTS = {
+      'iPhone 15 Pro': { price: 'KES 159,999', image: 'images/iphone-15-pro.jpeg', description: '6.1 inch Super Retina XDR, A17 Pro, 256GB, Titanium.' },
+      'Samsung Galaxy S24 Ultra': { price: 'KES 145,500', image: 'images/Samsung-galaxy-s24-ultra.jpeg', description: '6.8 inch Dynamic AMOLED 2X, 200MP camera, 512GB, S Pen.' },
+      'Xiaomi 14 Ultra': { price: 'KES 129,999', image: 'images/xiaomi-14-ultra.jpeg', description: '6.73 inch AMOLED, Leica quad camera, 16GB RAM, 512GB storage.' },
+      'Tecno Camon 30 Premier': { price: 'KES 58,999', image: 'images/tecno-camon-30.jpeg', description: '6.77 inch FHD+ 120Hz display, 50MP periscope, 12GB RAM.' },
+      'Infinix Note 40 Pro': { price: 'KES 42,999', image: 'images/infinix-note-40-pro.jpeg', description: '6.78 inch AMOLED 120Hz, 108MP camera, 8GB RAM, 256GB.' },
+      'Google Pixel 8 Pro': { price: 'KES 112,800', image: 'images/google-pixel-8-pro.jpeg', description: '6.7 inch LTPO OLED, Tensor G3, 128GB storage.' },
+      'LG OLED C3 65': { price: 'KES 289,000', image: 'images/lg-oled-c3.jpeg', description: '4K Smart TV with AI processor and Dolby Vision.' },
+      'Samsung Neo QLED 55': { price: 'KES 215,500', image: 'images/Samsung-neo-qled.jpeg', description: 'Quantum HDR display, advanced upscaling and premium sound.' },
+      'Sony Bravia XR 65': { price: 'KES 327,999', image: 'images/sony-bravia-xr.jpeg', description: 'Cognitive processor with Google TV and rich cinematic audio.' },
+      'Xiaomi Mi TV 5 55': { price: 'KES 89,999', image: 'images/xiaomi-mi-tv.jpeg', description: '4K QLED panel, 120Hz MEMC, Dolby Atmos support.' },
+      'TCL 65C745': { price: 'KES 139,500', image: 'images/tcl-c745.jpeg', description: 'QLED 4K TV with 144Hz game acceleration and Google TV.' },
+      'Hisense 55U8K': { price: 'KES 124,999', image: 'images/hisense-u8k.jpeg', description: 'Mini-LED 4K panel with Dolby Vision IQ and smooth 144Hz.' },
+      'macbook Pro 14': { price: 'KES 329,500', image: 'images/MacBook-pro-14.jpeg', description: 'M3 Pro chip, 18GB RAM, 512GB SSD, Space Black.' },
+      'Dell XPS 15': { price: 'KES 279,990', image: 'images/dell-xps-15.jpeg', description: 'Intel i9, RTX 4060 graphics, 32GB RAM, OLED display.' },
+      'HP Spectre x360': { price: 'KES 189,300', image: 'images/hp-spectre-x360.jpeg', description: 'Convertible 2-in-1 laptop, Intel i7, 16GB RAM, 1TB SSD.' },
+      'Infinix INBook Y2 Plus': { price: 'KES 65,999', image: 'images/infinix-inbook-y2-plus.jpeg', description: 'Intel i5, 16GB RAM, 512GB SSD, 14 inch FHD display.' },
+      'Tecno Megabook T1': { price: 'KES 45,999', image: 'images/tecno-megabook-t1.jpeg', description: 'Intel i3, 8GB RAM, 256GB SSD, 15.6 inch FHD display.' },
+      'Xiaomi Mi Notebook Ultra': { price: 'KES 114,999', image: 'images/xiaomi-mi-notebook-ultra.jpeg', description: 'Intel i7, 16GB RAM, 512GB SSD, 3.2K 90Hz display.' },
+      'Sony WH-1000XM5': { price: 'KES 42,500', image: 'images/sony-wh-1000xm5.jpeg', description: 'Premium wireless noise-canceling headphones with long battery life.' },
+      'Bose QC Ultra': { price: 'KES 48,900', image: 'images/bose-qc-ultra.jpeg', description: 'Immersive audio with advanced active noise cancellation.' },
+      'JBL Charge 5': { price: 'KES 18,200', image: 'images/jbl-charge-5.jpeg', description: 'Portable Bluetooth speaker with power bank and rugged design.' },
+      'Oraimo BoomPop 2': { price: 'KES 5,999', image: 'images/oraimo-boomPop-2.jpg', description: '20W portable speaker with RGB lights and IPX7 water resistance.' },
+      'Oraimo FreePods 4': { price: 'KES 3,499', image: 'images/oraimo-Freepods-4.jpeg', description: 'True wireless earbuds with ENC and long battery backup.' },
+      'Xiaomi Mi True Wireless Earphones 2 Basic': { price: 'KES 2,999', image: 'images/xiaomi-mi-true-wireless-earphones-2-basic.jpeg', description: 'Wireless earbuds with touch controls and up to 20h battery.' }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get('name');
+    const product = name ? PRODUCTS[name] : null;
+
+    const nameEl = document.getElementById('productName');
+    const priceEl = document.getElementById('productPrice');
+    const descEl = document.getElementById('productDescription');
+    const imageEl = document.getElementById('productImage');
+    const statusEl = document.getElementById('statusMessage');
+    const cartBtn = document.getElementById('addToCartBtn');
+
+    if (product) {
+      nameEl.textContent = name;
+      priceEl.textContent = product.price;
+      descEl.textContent = product.description;
+      imageEl.src = product.image;
+      imageEl.alt = name;
+    } else if (name) {
+      nameEl.textContent = name;
+      priceEl.textContent = 'Contact for pricing';
+      descEl.textContent = 'This product was found in the catalog, but full details are not yet available.';
+      imageEl.alt = name;
+    }
+
+    cartBtn.addEventListener('click', () => {
+      const selectedName = nameEl.textContent;
+      const selectedPrice = priceEl.textContent;
+      try {
+        const existing = JSON.parse(localStorage.getItem('kepkofCart') || '[]');
+        existing.push({ name: selectedName, price: selectedPrice, addedAt: Date.now() });
+        localStorage.setItem('kepkofCart', JSON.stringify(existing));
+      } catch (err) {
+        // Keep UX working even if storage is unavailable.
+      }
+
+      statusEl.textContent = selectedName + ' added to cart.';
+      statusEl.classList.add('show');
+    });
+  </script>
+</body>
+</html>
