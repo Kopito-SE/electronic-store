@@ -70,7 +70,17 @@ const directorsData = [
         image: "images/chiefinformation.jpg",
         profileUrl: "directors/eugene.html",
         description: "Expert in building high-performance tech teams"
-    }
+    },
+    {
+    id: 7,
+    name: "Beckham Junior",
+    title: "Chief Innovation Officer",
+    expertise: "Technology Strategy & System Development",
+    image: "images/beckham.jpg",
+    profileUrl: "directors/beckham.html",
+    description: "Computer science specialist focused on innovative digital solutions"
+}
+
 ];
 
 // ============================================
