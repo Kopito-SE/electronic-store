@@ -57,53 +57,103 @@
         <section class="hero" id="home" aria-labelledby="hero-heading">
             <div class="container hero-layout">
                 <div class="hero-content">
+                    <p class="hero-eyebrow">
+                        <i class="fas fa-bolt" aria-hidden="true"></i>
+                        Trusted by 5,000+ Kenyan Shoppers
+                    </p>
                     <h1 id="hero-heading">
-                        KEPKOF <br> One-Stop Shop for<br>
-                        <span class="highlight">Premium Electronics</span>
+                        Shop Genuine Electronics
+                        <span class="highlight">With Fast Delivery &amp; Real Warranty</span>
                     </h1>
-                    <p class="hero-subtitle">Smartphones • 4K TVs • Laptops • Audio • Accessories</p>
-                    <p class="hero-description">Discover the latest tech at unbeatable prices. Free delivery on orders over $50.</p>
+                    <p class="hero-subtitle">Buy flagship phones, creator laptops, smart TVs, and premium audio from verified brands. Transparent pricing, secure checkout, and support that responds quickly.</p>
+
+                    <div class="hero-offers" aria-label="Key offers">
+                        <span class="offer-pill"><i class="fas fa-tag" aria-hidden="true"></i>Weekly deals up to 40% off</span>
+                        <span class="offer-pill"><i class="fas fa-truck" aria-hidden="true"></i>Same-day Nairobi delivery</span>
+                        <span class="offer-pill"><i class="fas fa-check-circle" aria-hidden="true"></i>Official warranty included</span>
+                    </div>
                     
                     <div class="hero-buttons">
                         <button class="btn-primary" onclick="scrollToProducts()" type="button">
-                            <i class="fas fa-mobile-alt" aria-hidden="true"></i>
-                            Shop Now
+                            <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                            Shop Best Sellers
                         </button>
                         <button class="btn-secondary" id="newsletterBtn" type="button">
-                            <i class="fas fa-envelope" aria-hidden="true"></i>
-                            Get Deals
+                            <i class="fas fa-percent" aria-hidden="true"></i>
+                            View Today's Deals
                         </button>
                     </div>
-                    
-                    <div class="trust-badges">
-                        <div class="trust-item">
-                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
-                            <span>2 Year Warranty</span>
+
+                    <div class="hero-kpis" aria-label="Store highlights">
+                        <div class="hero-kpi">
+                            <strong>12K+</strong>
+                            <span>Orders fulfilled</span>
                         </div>
-                        <div class="trust-item">
-                            <i class="fas fa-truck" aria-hidden="true"></i>
-                            <span>Free Shipping</span>
+                        <div class="hero-kpi">
+                            <strong>4.8/5</strong>
+                            <span>Average customer rating</span>
                         </div>
-                        <div class="trust-item">
-                            <i class="fas fa-undo" aria-hidden="true"></i>
-                            <span>30 Day Returns</span>
+                        <div class="hero-kpi">
+                            <strong>24h</strong>
+                            <span>Dispatch for in-stock items</span>
                         </div>
+                    </div>
+
+                    <div class="hero-quick-links" aria-label="Quick shop links">
+                        <a class="hero-quick-link" href="smartphones.html">
+                            <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                            Smartphones
+                        </a>
+                        <a class="hero-quick-link" href="laptops.html">
+                            <i class="fas fa-laptop" aria-hidden="true"></i>
+                            Laptops
+                        </a>
+                        <a class="hero-quick-link" href="audio.html">
+                            <i class="fas fa-headphones" aria-hidden="true"></i>
+                            Audio
+                        </a>
+                        <a class="hero-quick-link" href="televisions.html">
+                            <i class="fas fa-tv" aria-hidden="true"></i>
+                            4K TVs
+                        </a>
                     </div>
                 </div>
 
-                <div class="hero-media" aria-hidden="true">
-                    <figure class="device-card laptop-card">
-                        <img src="images/laptopweoffer.jpg" alt="Premium laptops">
-                        <figcaption>Laptops</figcaption>
-                    </figure>
-                    <figure class="device-card phone-card">
-                        <img src="images/phonesweofer.jpg" alt="Latest smartphones">
-                        <figcaption>Phones</figcaption>
-                    </figure>
-                    <figure class="device-card audio-card">
-                        <img src="images/audioweofer.jpg" alt="Audio devices">
-                        <figcaption>Audio</figcaption>
-                    </figure>
+                <div class="hero-media">
+                    <div class="hero-slider-shell">
+                        <div class="hero-media-note">
+                            <i class="fas fa-lock" aria-hidden="true"></i>
+                            Secure payments and verified products
+                        </div>
+                        <div class="hero-slider" id="heroSlider" aria-label="Featured devices slideshow" aria-live="polite" tabindex="0">
+                            <figure class="hero-slide is-active" data-label="Laptops">
+                                <img src="images/laptopweoffer.jpg" alt="Premium laptops collection">
+                                <figcaption>Performance Laptops</figcaption>
+                            </figure>
+                            <figure class="hero-slide is-next" data-label="Phones">
+                                <img src="images/phonesweofer.jpg" alt="Latest smartphones collection">
+                                <figcaption>Flagship Smartphones</figcaption>
+                            </figure>
+                            <figure class="hero-slide is-next" data-label="Audio">
+                                <img src="images/audioweofer.jpg" alt="Audio devices collection">
+                                <figcaption>Immersive Audio Gear</figcaption>
+                            </figure>
+                        </div>
+                        <div class="hero-slider-footer">
+                            <p class="hero-slider-title" id="heroSliderTitle">Laptops</p>
+                            <div class="hero-slider-actions">
+                                <a class="hero-slider-link" href="products.html">
+                                    Browse all
+                                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                </a>
+                                <div class="hero-slider-dots" id="heroSliderDots" aria-label="Choose featured category slide">
+                                    <button class="hero-dot is-active" type="button" aria-label="Show laptops slide"></button>
+                                    <button class="hero-dot" type="button" aria-label="Show phones slide"></button>
+                                    <button class="hero-dot" type="button" aria-label="Show audio slide"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -166,7 +216,7 @@
             <div class="container">
                 <div class="sale-banner">
                     <div class="sale-content">
-                        <h2 id="sale-heading">⚡ Flash Sale ⚡</h2>
+                        <h2 id="sale-heading">Flash Sale</h2>
                         <p>Up to 40% off on selected smartphones and TVs</p>
                         
                         <div class="countdown" id="countdown" role="timer" aria-label="Sale ends in">
@@ -338,10 +388,4 @@
     <script src="js/script.js"></script>
 </body>
 </html>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<h1>Welcome to My Electronic Store</h1>
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+

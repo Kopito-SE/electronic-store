@@ -87,6 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initNewsletterForm();
     initModal();
     initAccessibility();
+    initHeroSlider();
     
     // Global event listeners
     window.addEventListener('resize', utils.debounce(handleResize, 250));
@@ -595,6 +596,112 @@ function initAccessibility() {
     });
 }
 
+
+function initHeroSlider() {
+    const slider = document.getElementById('heroSlider');
+    const slides = slider ? Array.from(slider.querySelectorAll('.hero-slide')) : [];
+    const title = document.getElementById('heroSliderTitle');
+    const dots = Array.from(document.querySelectorAll('.hero-dot'));
+
+    if (!slider || slides.length <= 1) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const delay = prefersReducedMotion ? 4000 : 2000;
+    let currentIndex = 0;
+    let sliderInterval = null;
+
+    function updateMeta(activeIndex) {
+        const activeLabel = slides[activeIndex].dataset.label || `Slide ${activeIndex + 1}`;
+
+        if (title) {
+            title.textContent = activeLabel;
+        }
+
+        dots.forEach((dot, index) => {
+            const isActive = index === activeIndex;
+            dot.classList.toggle('is-active', isActive);
+            dot.setAttribute('aria-current', isActive ? 'true' : 'false');
+            dot.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+    }
+
+    function renderSlides(nextIndex) {
+        slides.forEach((slide, index) => {
+            slide.classList.remove('is-active', 'is-prev', 'is-next');
+
+            if (index === nextIndex) {
+                slide.classList.add('is-active');
+                slide.setAttribute('aria-hidden', 'false');
+            } else if (index === currentIndex) {
+                slide.classList.add('is-prev');
+                slide.setAttribute('aria-hidden', 'true');
+            } else {
+                slide.classList.add('is-next');
+                slide.setAttribute('aria-hidden', 'true');
+            }
+        });
+
+        currentIndex = nextIndex;
+        updateMeta(currentIndex);
+    }
+
+    function showNextSlide() {
+        const nextIndex = (currentIndex + 1) % slides.length;
+        renderSlides(nextIndex);
+    }
+
+    function showPreviousSlide() {
+        const previousIndex = (currentIndex - 1 + slides.length) % slides.length;
+        renderSlides(previousIndex);
+    }
+
+    function stopAutoSlide() {
+        if (sliderInterval) {
+            clearInterval(sliderInterval);
+            sliderInterval = null;
+        }
+    }
+
+    function startAutoSlide() {
+        if (prefersReducedMotion) return;
+
+        stopAutoSlide();
+        sliderInterval = setInterval(showNextSlide, delay);
+    }
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            renderSlides(index);
+            startAutoSlide();
+        });
+    });
+
+    slider.addEventListener('mouseenter', stopAutoSlide);
+    slider.addEventListener('mouseleave', startAutoSlide);
+    slider.addEventListener('focusin', stopAutoSlide);
+    slider.addEventListener('focusout', (event) => {
+        if (!slider.contains(event.relatedTarget)) {
+            startAutoSlide();
+        }
+    });
+
+    slider.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowRight') {
+            event.preventDefault();
+            showNextSlide();
+            startAutoSlide();
+        }
+
+        if (event.key === 'ArrowLeft') {
+            event.preventDefault();
+            showPreviousSlide();
+            startAutoSlide();
+        }
+    });
+
+    renderSlides(0);
+    startAutoSlide();
+}
 /**
  * Event Handlers
  */
@@ -649,3 +756,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
