@@ -331,6 +331,7 @@ ul, ol {
 /* ============================================
    BUTTONS
    ============================================ */
+/* Buttons */
 .btn-primary,
 .btn-secondary {
     display: inline-flex;
@@ -343,7 +344,7 @@ ul, ol {
     font-size: var(--text-base);
     transition: all var(--transition-base);
     text-align: center;
-    min-height: 48px; /* Touch target */
+    min-height: 48px;
 }
 
 .btn-primary {
@@ -373,6 +374,7 @@ ul, ol {
     padding: 1rem 2.5rem;
     font-size: var(--text-lg);
 }
+
 
 /* ============================================
    HERO SECTION
@@ -903,15 +905,17 @@ ul, ol {
         grid-template-columns: repeat(4, 1fr);
     }
 }
-
-.category-card {
-    background: rgba(255,255,255,0.95);
+.category-card
+{ 
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(10px);
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-md);
     transition: all var(--transition-slow);
     position: relative;
     aspect-ratio: 1 / 1.2;
+    border: 1px solid rgba(255,255,255,0.3);
 }
 
 .category-card a {
@@ -964,22 +968,21 @@ ul, ol {
 .category-icon {
     width: 70px;
     height: 70px;
-    background: var(--primary-light);
-    color: var(--primary);
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 28px;
+    color: white;
+    background: var(--primary);
+    border-radius: 50%;
     margin-bottom: var(--space-md);
-    transition: all var(--transition-slow);
-    position: relative;
-    z-index: 2;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-primary);
 }
 
 .category-card:hover .category-icon {
-    background: var(--primary);
-    color: white;
-    transform: scale(1.1);
+    transform: scale(1.15) rotate(8deg);
+    background: var(--accent);
 }
 
 .category-icon i {
