@@ -983,6 +983,130 @@ ul, ol {
         width: 100%;
     }
 }
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width: 1024px) {
+    .nav-wrapper {
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .mobile-nav {
+        padding: var(--space-sm);
+    }
+
+    .hero-modern__card {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-modern__visual {
+        justify-content: center;
+    }
+
+    .hero-modern__products {
+        grid-template-columns: repeat(2, minmax(180px, 1fr));
+    }
+
+    .hero-modern__image-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+
+    .hero-modern__product {
+        padding: 0.85rem;
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .flash-sale .sale-banner {
+        padding: clamp(1.75rem, 4vw, 3.5rem);
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .newsletter .newsletter-form {
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+}
+
+@media (max-width: 640px) {
+    .nav-wrapper {
+        gap: var(--space-sm);
+    }
+
+    .nav-links {
+        gap: var(--space-sm);
+    }
+
+    .hero-modern__products {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-modern__product {
+        padding: 0.9rem 0.8rem;
+    }
+
+    .hero-modern__image-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero-modern__visual-tag {
+        justify-content: center;
+    }
+
+    .hero-modern__card {
+        padding: 2rem;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-card {
+        padding: 1.5rem;
+    }
+
+    .flash-sale .countdown {
+        flex-direction: column;
+    }
+
+    .about {
+        padding: var(--space-3xl) 0;
+    }
+
+    .newsletter {
+        padding: 2.5rem 0;
+    }
+
+    .newsletter-form .form-group {
+        flex-direction: column;
+    }
+
+    .newsletter-form input,
+    .newsletter-form button {
+        width: 100%;
+    }
+
+    .footer {
+        padding: var(--space-2xl) var(--space-md);
+    }
+}
+
+
 /* ============================================
    CATEGORIES SECTION
    ============================================ */
