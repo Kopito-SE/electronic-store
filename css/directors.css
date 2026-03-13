@@ -3,22 +3,23 @@
    ============================================ */
 :root {
     /* Colors */
-    --primary: #667eea;
-    --primary-dark: #5a67d8;
-    --primary-light: #7c3aed;
-    --secondary: #764ba2;
-    --accent: #0960e2;
-    --text-primary: #1a202c;
-    --text-secondary: #4a5568;
-    --text-muted: #718096;
-    --bg-white: #ffffff;
-    --bg-light: #f7fafc;
-    --bg-gray: #edf2f7;
-    --border: #e2e8f0;
+    --primary: #38bdf8;
+    --primary-dark: #0ea5e9;
+    --primary-light: #60a5fa;
+    --secondary: #050d1a;
+    --accent: #f97316;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5f5;
+    --text-muted: #94a3b8;
+    --bg-dark: #030712;
+    --bg-white: #0b1220;
+    --bg-light: #111828;
+    --bg-gray: #1b1f38;
+    --border: rgba(255, 255, 255, 0.15);
     
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-    --gradient-header: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    --gradient-header: linear-gradient(135deg, rgba(56,189,248,0.15) 0%, rgba(15,23,42,0.8) 100%);
     
     /* Spacing */
     --space-xs: 0.5rem;
@@ -45,11 +46,11 @@
     --radius-full: 9999px;
     
     /* Shadows */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.55);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.65);
+    --shadow-md: 0 15px 35px rgba(0, 0, 0, 0.75);
+    --shadow-lg: 0 25px 50px rgba(0, 0, 0, 0.75);
+    --shadow-xl: 0 30px 60px rgba(0, 0, 0, 0.85);
     
     /* Transitions */
     --transition-fast: 150ms ease;
@@ -76,7 +77,7 @@ body {
     font-size: var(--text-base);
     line-height: 1.6;
     color: var(--text-primary);
-    background-color: var(--bg-light);
+    background-color: var(--bg-dark);
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
