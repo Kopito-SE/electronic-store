@@ -382,23 +382,12 @@ ul, ol {
 .hero {
     position: relative;
     overflow: hidden;
-    background:
-        radial-gradient(circle at 15% 20%, rgba(37,99,235,0.32), transparent 45%),
-        radial-gradient(circle at 85% 80%, rgba(239,68,68,0.25), transparent 40%),
-        linear-gradient(135deg, #0b1a3a 0%, #14274e 55%, #1f3b7a 100%);
-    padding: clamp(4rem, 10vw, 7rem) 0;
-    color: white;
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
+    background: linear-gradient(180deg, #e6ecf4 0%, #f7fbff 65%, #ffffff 100%);
+    padding: clamp(3rem, 6vw, 6rem) 0;
 }
 
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.35));
-    pointer-events: none;
+.hero-modern {
+    background: none;
 }
 
 .hero-layout {
@@ -557,6 +546,153 @@ ul, ol {
 .trust-item i {
     color: #facc15;
     font-size: 1rem;
+}
+
+.hero-modern__shell {
+    width: 100%;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+.hero-modern__card {
+    background: #1d262f;
+    border-radius: 32px;
+    padding: clamp(var(--space-lg), 4vw, var(--space-3xl));
+    position: relative;
+    overflow: hidden;
+    color: #f8fafc;
+    box-shadow: 0 35px 60px rgba(13, 24, 45, 0.35);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(var(--space-lg), 4vw, var(--space-3xl));
+}
+
+.hero-modern__copy h1 {
+    margin-bottom: var(--space-sm);
+}
+
+.hero-modern__subtitle {
+    max-width: 46ch;
+    margin-bottom: var(--space-lg);
+    color: rgba(248, 250, 252, 0.8);
+}
+
+.hero-modern__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.hero-modern__promises {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.65rem;
+}
+
+.hero-modern__promise {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 0.65rem 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-modern__promise i {
+    font-size: 1.35rem;
+    color: #fb923c;
+}
+
+.hero-modern__promise strong {
+    display: block;
+    font-size: 0.95rem;
+}
+
+.hero-modern__promise span {
+    font-size: 0.82rem;
+    color: rgba(241, 245, 249, 0.78);
+}
+
+.hero-modern__visual {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.hero-modern__image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem;
+    width: 100%;
+}
+
+.hero-modern__image-grid img {
+    width: 100%;
+    border-radius: 18px;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+.hero-modern__visual-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    padding: 0.4rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.hero-modern__products {
+    margin-top: var(--space-lg);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.hero-modern__product {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 20px 30px rgba(15, 23, 42, 0.12);
+}
+
+.hero-modern__product img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid rgba(15, 23, 42, 0.18);
+}
+
+.hero-modern__product h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #0f172a;
+}
+
+.hero-modern__product p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #475569;
+}
+
+@media (max-width: 768px) {
+    .hero-modern__card {
+        padding: var(--space-lg);
+    }
 }
 
 .hero-media {
