@@ -1564,4 +1564,44 @@ ul, ol {
         content: " (" attr(href) ")";
     }
 }
+/* Toast Notification */
+
+.toast{
+position:fixed;
+bottom:30px;
+right:30px;
+background:#0b2d4a;
+color:white;
+padding:15px 20px;
+border-radius:8px;
+display:flex;
+align-items:center;
+gap:10px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+opacity:0;
+transform:translateY(20px);
+transition:all 0.4s ease;
+z-index:2000;
+}
+
+.toast.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.toast i{
+color:#00bcd4;
+font-size:18px;
+}
+.categories-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:35px;
+margin-top:40px;
+justify-items:center;
+}
+.category-card{
+max-width:300px;
+width:100%;
+}
 
