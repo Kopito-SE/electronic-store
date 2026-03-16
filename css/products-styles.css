@@ -7,8 +7,8 @@
 }
 
 body {
-  background: #f4f7fc;
-  color: #1e2a41;
+  background: #050b13;
+  color: #e2e8f0;
   line-height: 1.5;
 }
 
@@ -18,10 +18,11 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  background: #0c1a2b;
-  color: white;
+  background: rgba(5, 11, 19, 0.95);
+  color: #e2e8f0;
   padding: 1rem 2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.75);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
 }
 
 .logo {
@@ -43,25 +44,25 @@ body {
   gap: 2rem;
   flex-wrap: wrap;
 }
-.category-nav a {
-  color: #e0e8ff;
-  text-decoration: none;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 0.4rem 0;
-  border-bottom: 2px solid transparent;
-  transition: 0.2s;
-}
-.category-nav a i {
-  color: #0dcaf0;
-  font-size: 1.2rem;
-}
-.category-nav a:hover {
-  border-bottom-color: #0dcaf0;
-  color: white;
-}
+  .category-nav a {
+    color: #cbd5f5;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.4rem 0;
+    border-bottom: 2px solid transparent;
+    transition: 0.2s;
+  }
+  .category-nav a i {
+    color: #38bdf8;
+    font-size: 1.2rem;
+  }
+  .category-nav a:hover {
+    border-bottom-color: #38bdf8;
+    color: white;
+  }
 
 .header-icons {
   display: flex;

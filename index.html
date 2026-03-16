@@ -54,106 +54,134 @@
     <!-- Main Content -->
     <main id="main-content">
         <!-- Hero Section -->
-        <section class="hero" id="home" aria-labelledby="hero-heading">
-            <div class="container hero-layout">
-                <div class="hero-content">
-                    <p class="hero-eyebrow">
-                        <i class="fas fa-bolt" aria-hidden="true"></i>
-                        Trusted by 5,000+ Kenyan Shoppers
-                    </p>
-                    <h1 id="hero-heading">
-                        Shop Genuine Electronics
-                        <span class="highlight">With Fast Delivery &amp; Real Warranty</span>
-                    </h1>
-                    <p class="hero-subtitle">Buy flagship phones, creator laptops, smart TVs, and premium audio from verified brands. Transparent pricing, secure checkout, and support that responds quickly.</p>
-
-                    <div class="hero-offers" aria-label="Key offers">
-                        <span class="offer-pill"><i class="fas fa-tag" aria-hidden="true"></i>Weekly deals up to 40% off</span>
-                        <span class="offer-pill"><i class="fas fa-truck" aria-hidden="true"></i>Same-day Nairobi delivery</span>
-                        <span class="offer-pill"><i class="fas fa-check-circle" aria-hidden="true"></i>Official warranty included</span>
-                    </div>
-                    
-                    <div class="hero-buttons">
-                        <button class="btn-primary" onclick="scrollToProducts()" type="button">
-                            <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-                            Shop Best Sellers
-                        </button>
-                        <button class="btn-secondary" id="newsletterBtn" type="button">
-                            <i class="fas fa-percent" aria-hidden="true"></i>
-                            View Today's Deals
-                        </button>
-                    </div>
-
-                    <div class="hero-kpis" aria-label="Store highlights">
-                        <div class="hero-kpi">
-                            <strong>12K+</strong>
-                            <span>Orders fulfilled</span>
+        <section class="hero hero-modern" id="home" aria-labelledby="hero-heading">
+            <div class="container hero-modern__shell">
+                <div class="hero-modern__card">
+                    <div class="hero-modern__copy">
+                        <p class="hero-eyebrow hero-modern__eyebrow">
+                            <i class="fas fa-bolt" aria-hidden="true"></i>
+                            KEPKOF Electronics
+                        </p>
+                        <h1 id="hero-heading">
+                            Choose Your Latest
+                            <span class="highlight">Electronics Products</span>
+                        </h1>
+                        <p class="hero-subtitle hero-modern__subtitle">
+                            Upgrade any room with premium gadgets and appliances. We curate the best TVs, laptops, phones, and audio so your next purchase looks and sounds exceptional.
+                        </p>
+                        <div class="hero-modern__cta">
+                            <a href="#products" class="btn-primary" role="button">Explore more</a>
                         </div>
-                        <div class="hero-kpi">
-                            <strong>4.8/5</strong>
-                            <span>Average customer rating</span>
-                        </div>
-                        <div class="hero-kpi">
-                            <strong>24h</strong>
-                            <span>Dispatch for in-stock items</span>
+                        <div class="hero-modern__promises" aria-label="Hero promises">
+                            <div class="hero-modern__promise">
+                                <i class="fas fa-shipping-fast" aria-hidden="true"></i>
+                                <div>
+                                    <strong>Free Shipping</strong>
+                                    <span>On every order</span>
+                                </div>
+                            </div>
+                            <div class="hero-modern__promise">
+                                <i class="fas fa-headset" aria-hidden="true"></i>
+                                <div>
+                                    <strong>Support 24/7</strong>
+                                    <span>Reach a real human anytime</span>
+                                </div>
+                            </div>
+                            <div class="hero-modern__promise">
+                                <i class="fas fa-money-bill-wave" aria-hidden="true"></i>
+                                <div>
+                                    <strong>Money Return</strong>
+                                    <span>Back guarantee in 5 days</span>
+                                </div>
+                            </div>
+                            <div class="hero-modern__promise">
+                                <i class="fas fa-percent" aria-hidden="true"></i>
+                                <div>
+                                    <strong>Order Discount</strong>
+                                    <span>On orders over KES 15,000</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="hero-quick-links" aria-label="Quick shop links">
-                        <a class="hero-quick-link" href="smartphones.html">
-                            <i class="fas fa-mobile-alt" aria-hidden="true"></i>
-                            Smartphones
-                        </a>
-                        <a class="hero-quick-link" href="laptops.html">
-                            <i class="fas fa-laptop" aria-hidden="true"></i>
-                            Laptops
-                        </a>
-                        <a class="hero-quick-link" href="audio.html">
-                            <i class="fas fa-headphones" aria-hidden="true"></i>
-                            Audio
-                        </a>
-                        <a class="hero-quick-link" href="televisions.html">
-                            <i class="fas fa-tv" aria-hidden="true"></i>
-                            4K TVs
-                        </a>
-                    </div>
-                </div>
-
-                <div class="hero-media">
-                    <div class="hero-slider-shell">
+                <div class="hero-modern__visual" aria-hidden="true">
+                    <div class="hero-slider-shell hero-modern__slider">
                         <div class="hero-media-note">
-                            <i class="fas fa-lock" aria-hidden="true"></i>
-                            Secure payments and verified products
+                            <i class="fas fa-atom" aria-hidden="true"></i>
+                            Curated devices refreshed daily
                         </div>
-                        <div class="hero-slider" id="heroSlider" aria-label="Featured devices slideshow" aria-live="polite" tabindex="0">
-                            <figure class="hero-slide is-active" data-label="Laptops">
-                                <img src="images/laptopweoffer.jpg" alt="Premium laptops collection">
-                                <figcaption>Performance Laptops</figcaption>
+                        <div class="hero-slider" id="heroSlider" aria-label="Featured electronics slideshow" aria-live="polite" tabindex="0">
+                            <figure class="hero-slide is-active" data-label="Appliances">
+                                <img src="images/tvweoffer.jpg" alt="Sleek televisions collection">
+                                <figcaption>Ultra-bright Televisions</figcaption>
+                            </figure>
+                            <figure class="hero-slide is-next" data-label="Kitchen">
+                                <img src="images/laptopweoffer.jpg" alt="Modern laptops in studio lighting">
+                                <figcaption>Designer Laptops</figcaption>
                             </figure>
                             <figure class="hero-slide is-next" data-label="Phones">
-                                <img src="images/phonesweofer.jpg" alt="Latest smartphones collection">
+                                <img src="images/phonesweofer.jpg" alt="Stack of premium smartphones">
                                 <figcaption>Flagship Smartphones</figcaption>
                             </figure>
                             <figure class="hero-slide is-next" data-label="Audio">
-                                <img src="images/audioweofer.jpg" alt="Audio devices collection">
-                                <figcaption>Immersive Audio Gear</figcaption>
+                                <img src="images/audioweofer.jpg" alt="Bespoke audio gear">
+                                <figcaption>Immersive Audio</figcaption>
                             </figure>
                         </div>
                         <div class="hero-slider-footer">
-                            <p class="hero-slider-title" id="heroSliderTitle">Laptops</p>
+                            <p class="hero-slider-title" id="heroSliderTitle">Appliances</p>
                             <div class="hero-slider-actions">
                                 <a class="hero-slider-link" href="products.html">
                                     Browse all
                                     <i class="fas fa-arrow-right" aria-hidden="true"></i>
                                 </a>
-                                <div class="hero-slider-dots" id="heroSliderDots" aria-label="Choose featured category slide">
-                                    <button class="hero-dot is-active" type="button" aria-label="Show laptops slide"></button>
-                                    <button class="hero-dot" type="button" aria-label="Show phones slide"></button>
+                                <div class="hero-slider-dots" id="heroSliderDots" aria-label="Choose featured device">
+                                    <button class="hero-dot is-active" type="button" aria-label="Show appliances slide"></button>
+                                    <button class="hero-dot" type="button" aria-label="Show laptops slide"></button>
+                                    <button class="hero-dot" type="button" aria-label="Show smartphones slide"></button>
                                     <button class="hero-dot" type="button" aria-label="Show audio slide"></button>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+                </div>
+                <div class="hero-modern__products" aria-label="Featured product categories">
+                    <article class="hero-modern__product">
+                        <a href="televisions.html">
+                            <img src="images/tvweoffer.jpg" alt="Televisions" loading="lazy">
+                            <div>
+                                <h3>Televisions</h3>
+                                <p>OLED, QLED &amp; smart screens</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="hero-modern__product">
+                        <a href="laptops.html">
+                            <img src="images/laptopweoffer.jpg" alt="Laptops" loading="lazy">
+                            <div>
+                                <h3>Laptops</h3>
+                                <p>Workstations &amp; creators' picks</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="hero-modern__product">
+                        <a href="smartphones.html">
+                            <img src="images/phonesweofer.jpg" alt="Smartphones" loading="lazy">
+                            <div>
+                                <h3>Smartphones</h3>
+                                <p>Flagship &amp; everyday devices</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="hero-modern__product">
+                        <a href="audio.html">
+                            <img src="images/audioweofer.jpg" alt="Audio" loading="lazy">
+                            <div>
+                                <h3>Audio</h3>
+                                <p>Sound systems &amp; true wireless</p>
+                            </div>
+                        </a>
+                    </article>
                 </div>
             </div>
         </section>
@@ -385,16 +413,7 @@
     </div>
 
     <!-- JavaScript -->
- 
+
     <script src="js/script.js"></script>
 </body>
-<<<<<<< HEAD
-<<<<<<< HEAD
 </html>
-
-=======
-</html>
->>>>>>> 5432a67 (Improved category icon styling)
-=======
-</html>
->>>>>>> parent of ae9754c (Resolved merge conflict in index.html)
