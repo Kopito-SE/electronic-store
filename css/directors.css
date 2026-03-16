@@ -3,22 +3,22 @@
    ============================================ */
 :root {
     /* Colors */
-    --primary: #667eea;
-    --primary-dark: #5a67d8;
-    --primary-light: #7c3aed;
-    --secondary: #764ba2;
-    --accent: #0960e2;
-    --text-primary: #1a202c;
-    --text-secondary: #4a5568;
-    --text-muted: #718096;
-    --bg-white: #ffffff;
-    --bg-light: #f7fafc;
-    --bg-gray: #edf2f7;
-    --border: #e2e8f0;
+    --primary: #38bdf8;
+    --primary-dark: #0ea5e9;
+    --primary-light: #7dd3fc;
+    --secondary: #0f172a;
+    --accent: #f97316;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5f5;
+    --text-muted: #94a3b8;
+    --bg-dark: #030712;
+    --bg-panel: #0b1220;
+    --bg-muted: rgba(255, 255, 255, 0.03);
+    --border: rgba(255, 255, 255, 0.1);
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-    --gradient-header: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    --gradient-primary: linear-gradient(135deg, rgba(56, 189, 248, 0.95), rgba(14, 165, 233, 0.85));
+    --gradient-header: linear-gradient(135deg, rgba(8, 15, 32, 0.85), rgba(5, 10, 25, 1));
     
     /* Spacing */
     --space-xs: 0.5rem;
@@ -76,7 +76,7 @@ body {
     font-size: var(--text-base);
     line-height: 1.6;
     color: var(--text-primary);
-    background-color: var(--bg-light);
+    background-color: var(--bg-dark);
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -153,12 +153,12 @@ button {
    NAVIGATION
    ============================================ */
 .navbar {
-    background: var(--gradient-primary);
+    background: var(--bg-panel);
     color: white;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
     height: var(--header-height);
 }
 
@@ -208,7 +208,7 @@ button {
     top: var(--header-height);
     left: 0;
     right: 0;
-    background: var(--gradient-primary);
+    background: var(--bg-panel);
     flex-direction: column;
     align-items: center;
     padding: var(--space-md) 0;
@@ -302,11 +302,12 @@ button {
    PAGE HEADER
    ============================================ */
 .page-header {
-    background: var(--gradient-header);
+    background: var(--bg-panel);
     padding: clamp(3rem, 8vw, 5rem) 0;
     text-align: center;
     position: relative;
     overflow: hidden;
+    border-bottom: 1px solid var(--border);
 }
 
 .page-header::before {
@@ -316,7 +317,7 @@ button {
     right: -10%;
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
     border-radius: 50%;
 }
 
@@ -341,7 +342,7 @@ button {
    ============================================ */
 .directors-section {
     padding: var(--space-2xl) 0;
-    background: var(--bg-light);
+    background: var(--bg-dark);
 }
 
 /* Search Container */
@@ -371,7 +372,8 @@ button {
     border: 2px solid var(--border);
     border-radius: var(--radius-full);
     font-size: var(--text-base);
-    background: var(--bg-white);
+    background: var(--bg-panel);
+    color: var(--text-primary);
     transition: all var(--transition-fast);
 }
 
@@ -417,7 +419,7 @@ button {
    DIRECTOR CARDS
    ============================================ */
 .director-card {
-    background: var(--bg-white);
+    background: var(--bg-panel);
     border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow);
@@ -556,7 +558,7 @@ button {
    ============================================ */
 .leadership-info {
     padding: var(--space-2xl) 0;
-    background: var(--bg-white);
+    background: var(--bg-dark);
     position: relative;
 }
 
@@ -607,7 +609,7 @@ button {
     text-align: center;
     padding: var(--space-md);
     border-radius: var(--radius);
-    background: var(--bg-light);
+    background: var(--bg-panel);
     transition: transform var(--transition-base);
 }
 
@@ -637,9 +639,10 @@ button {
    FOOTER
    ============================================ */
 footer {
-    background: var(--text-primary);
+    background: var(--bg-panel);
     color: #cbd5e1;
     padding: var(--space-2xl) 0 var(--space-lg);
+    border-top: 1px solid var(--border);
 }
 
 .footer-content {
@@ -661,7 +664,7 @@ footer {
     }
 }
 
-.footer-section h3,
+ .footer-section h3,
 .footer-section h4 {
     color: white;
     margin-bottom: var(--space-md);
@@ -758,6 +761,16 @@ footer {
 .toast i {
     color: var(--primary);
     font-size: 1.25rem;
+}
+
+.profile-shell {
+    max-width: 960px;
+    margin: 40px auto 60px;
+    padding: 40px;
+    background: linear-gradient(180deg, var(--bg-panel) 0%, rgba(11,18,32,0.95) 100%);
+    border-radius: 32px;
+    border: 1px solid var(--border);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
 }
 
 /* ============================================

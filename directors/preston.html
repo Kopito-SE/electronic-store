@@ -3,128 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRESTON KIPROTICH | KEPKOF Director Profile</title>
+    <title>PRESTON KIPROTICH | Chief Sales Officer</title>
+    <link rel="stylesheet" href="../css/directors.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            padding: 20px;
-            color: #333;
-        }
-
-        .container {
-            max-width: 700px;
-            margin: 60px auto 0;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
-        }
-
-        .profile-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 15px;
-            border: 4px solid #007bff;
-        }
-
-        h1 {
-            margin-bottom: 6px;
-        }
-
-        .title {
-            color: #007bff;
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        .details {
-            margin: 20px 0;
-        }
-
-        .detail-item {
-            margin: 12px 0;
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        .label {
-            font-weight: bold;
-            color: #555;
-        }
-
-        .value {
-            color: #666;
-            margin-left: 10px;
-        }
-
-        .actions {
-            margin-top: 22px;
+        .modern-profile {
             display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 32px;
         }
-
-        .btn {
-            display: inline-block;
-            text-decoration: none;
-            border-radius: 8px;
-            padding: 10px 14px;
-            font-weight: 600;
+        .avatar-panel {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 18px;
+            align-items: center;
         }
-
-        .btn-primary {
-            background: #007bff;
-            color: #fff;
+        .avatar-frame {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            padding: 5px;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.8), rgba(248, 113, 113, 0.85));
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
         }
-
-        .btn-secondary {
-            background: #e5e7eb;
-            color: #111827;
+        .avatar-frame img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3px solid rgba(2, 6, 23, 0.9);
+            object-fit: cover;
+        }
+        .key-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
+        }
+        .key-card span {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .key-card strong {
+            display: block;
+            margin-top: 6px;
+            font-size: 1.8rem;
+            color: var(--text-primary);
+        }
+        .timeline {
+            display: grid;
+            gap: 12px;
+        }
+        .timeline-item {
+            padding: 18px;
+            border-radius: 18px;
+            background: var(--bg-panel);
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .timeline-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+        }
+        .timeline-item strong {
+            font-size: 1.4rem;
+            color: var(--primary);
+        }
+        @media (max-width: 640px) {
+            .avatar-panel {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
-    <main class="container">
+    <main class="profile-shell modern-profile">
         <header class="profile-header">
-            <img src="../images/chieffinancial.jpg" alt="PRESTON KIPROTICH" class="profile-img">
-            <h1>PRESTON KIPROTICH</h1>
-            <p class="title">Chief Financial Officer</p>
+            <div class="avatar-panel">
+                <div class="avatar-frame">
+                    <img src="../images/chiefsales.jpg" alt="PRESTON KIPROTICH">
+                </div>
+                <div>
+                    <h1>PRESTON KIPROTICH</h1>
+                    <p class="title">Chief Sales Officer</p>
+                    <p class="bio">Champions the retail force, channel partnerships, and premium group selling experiences.</p>
+                </div>
+            </div>
         </header>
 
-        <section class="details" aria-label="Profile details">
+        <section class="details" aria-label="Contact &amp; experience">
             <div class="detail-item">
-                <span class="label">Email:</span>
+                <span class="label">Email</span>
                 <span class="value">preston@kepkof.com</span>
             </div>
             <div class="detail-item">
-                <span class="label">Phone:</span>
-                <span class="value">+254 702 432 344</span>
+                <span class="label">Phone</span>
+                <span class="value">+254 721 444 555</span>
             </div>
             <div class="detail-item">
-                <span class="label">Department:</span>
-                <span class="value">Finance and Strategy</span>
+                <span class="label">Location</span>
+                <span class="value">Nairobi, Kenya</span>
             </div>
             <div class="detail-item">
-                <span class="label">Experience:</span>
-                <span class="value">5+ Years in Financial Planning and Investment</span>
+                <span class="label">Experience</span>
+                <span class="value">11 years growing premium electronics sales channels</span>
+            </div>
+        </section>
+
+        <section class="details" aria-label="Sales focus">
+            <div class="detail-item">
+                <span class="label">Retail Excellence</span>
+                <span class="value">Orchestrates unified retail experiences across showrooms and digital touchpoints.</span>
             </div>
             <div class="detail-item">
-                <span class="label">Bio:</span>
-                <span class="value">Finance executive driving disciplined growth, profitability, and long-term investment strategy.</span>
+                <span class="label">Partnerships</span>
+                <span class="value">Builds B2B alliances and vendor curation programs for premium launches.</span>
+            </div>
+            <div class="detail-item">
+                <span class="label">Coaching</span>
+                <span class="value">Develops sales leaders through data, storytelling, and service leadership.</span>
+            </div>
+        </section>
+
+        <section class="details" aria-label="Impact highlights">
+            <div class="detail-item">
+                <span class="label">Revenue</span>
+                <span class="value">Scaled new product revenue +150% within 18 months.</span>
+            </div>
+            <div class="detail-item">
+                <span class="label">Experience</span>
+                <span class="value">Implemented immersive demos that lifted conversion by 23%.</span>
+            </div>
+        </section>
+
+        <section class="details" aria-label="Live metrics">
+            <div class="key-card">
+                <div>
+                    <span>Conversion</span>
+                    <strong>23%</strong>
+                </div>
+                <div>
+                    <span>Growth</span>
+                    <strong>+150%</strong>
+                </div>
+                <div>
+                    <span>Coverage</span>
+                    <strong>4 regions</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="details" aria-label="Timeline highlights">
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-label">2024</span>
+                    <p>Accelerated flagship launches with immersive pop-up studios.</p>
+                    <strong>+70%</strong>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-label">2022</span>
+                    <p>Instituted premium partner tiers with shared KPIs.</p>
+                    <strong>4 Regions</strong>
+                </div>
             </div>
         </section>
 

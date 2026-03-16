@@ -3,128 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KEVIN KIPTOO | KEPKOF Director Profile</title>
+    <title>KEVIN KIPTOO | Chief Technology Officer</title>
+    <link rel="stylesheet" href="../css/directors.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            padding: 20px;
-            color: #333;
-        }
-
-        .container {
-            max-width: 700px;
-            margin: 60px auto 0;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
-        }
-
-        .profile-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 15px;
-            border: 4px solid #007bff;
-        }
-
-        h1 {
-            margin-bottom: 6px;
-        }
-
-        .title {
-            color: #007bff;
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        .details {
-            margin: 20px 0;
-        }
-
-        .detail-item {
-            margin: 12px 0;
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        .label {
-            font-weight: bold;
-            color: #555;
-        }
-
-        .value {
-            color: #666;
-            margin-left: 10px;
-        }
-
-        .actions {
-            margin-top: 22px;
+        .modern-profile {
             display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 32px;
         }
-
-        .btn {
-            display: inline-block;
-            text-decoration: none;
-            border-radius: 8px;
-            padding: 10px 14px;
-            font-weight: 600;
+        .avatar-panel {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 18px;
+            align-items: center;
         }
-
-        .btn-primary {
-            background: #007bff;
-            color: #fff;
+        .avatar-frame {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            padding: 5px;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.8), rgba(248, 113, 113, 0.85));
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
         }
-
-        .btn-secondary {
-            background: #e5e7eb;
-            color: #111827;
+        .avatar-frame img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3px solid rgba(2, 6, 23, 0.9);
+            object-fit: cover;
+        }
+        .key-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
+        }
+        .key-card span {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .key-card strong {
+            display: block;
+            margin-top: 6px;
+            font-size: 1.8rem;
+            color: var(--text-primary);
+        }
+        .timeline {
+            display: grid;
+            gap: 12px;
+        }
+        .timeline-item {
+            padding: 18px;
+            border-radius: 18px;
+            background: var(--bg-panel);
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .timeline-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+        }
+        .timeline-item strong {
+            font-size: 1.4rem;
+            color: var(--primary);
+        }
+        @media (max-width: 640px) {
+            .avatar-panel {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
-    <main class="container">
+    <main class="profile-shell modern-profile">
         <header class="profile-header">
-            <img src="../images/chieftechnology.jpg" alt="KEVIN KIPTOO" class="profile-img">
-            <h1>KEVIN KIPTOO</h1>
-            <p class="title">Chief Technology Officer</p>
+            <div class="avatar-panel">
+                <div class="avatar-frame">
+                    <img src="../images/chieftechnology.jpg" alt="KEVIN KIPTOO">
+                </div>
+                <div>
+                    <h1>KEVIN KIPTOO</h1>
+                    <p class="title">Chief Technology Officer</p>
+                    <p class="bio">Builds secure, scalable platforms that power the shopping and operations experience.</p>
+                </div>
+            </div>
         </header>
 
-        <section class="details" aria-label="Profile details">
+        <section class="details" aria-label="Contact &amp; experience">
             <div class="detail-item">
-                <span class="label">Email:</span>
+                <span class="label">Email</span>
                 <span class="value">kevin@kepkof.com</span>
             </div>
             <div class="detail-item">
-                <span class="label">Phone:</span>
-                <span class="value">+254 702 432 344</span>
+                <span class="label">Phone</span>
+                <span class="value">+254 711 222 333</span>
             </div>
             <div class="detail-item">
-                <span class="label">Department:</span>
-                <span class="value">Technology and Innovation</span>
+                <span class="label">Location</span>
+                <span class="value">Nairobi, Kenya</span>
             </div>
             <div class="detail-item">
-                <span class="label">Experience:</span>
-                <span class="value">5+ Years in Product and Platform Engineering</span>
+                <span class="label">Experience</span>
+                <span class="value">15 years engineering distributed systems and platforms</span>
+            </div>
+        </section>
+
+        <section class="details" aria-label="Technology focus">
+            <div class="detail-item">
+                <span class="label">Platform Strategy</span>
+                <span class="value">Defines the stack, integration, and reliability playbooks for all digital touchpoints.</span>
             </div>
             <div class="detail-item">
-                <span class="label">Bio:</span>
-                <span class="value">Technology leader building reliable systems and product innovation for modern retail experiences.</span>
+                <span class="label">Security &amp; Resilience</span>
+                <span class="value">Sets zero-trust guardrails and site reliability engineering practices.</span>
+            </div>
+            <div class="detail-item">
+                <span class="label">Engineering Culture</span>
+                <span class="value">Leads squads through continuous delivery, experimentation, and mentorship.</span>
+            </div>
+        </section>
+
+        <section class="details" aria-label="Impact highlights">
+            <div class="detail-item">
+                <span class="label">Reliability</span>
+                <span class="value">Maintained 99.98% uptime across ecommerce, inventory, and internal tools.</span>
+            </div>
+            <div class="detail-item">
+                <span class="label">Automation</span>
+                <span class="value">Automated 87% of routine ops so teams can focus on innovation.</span>
+            </div>
+        </section>
+
+        <section class="details" aria-label="Live metrics">
+            <div class="key-card">
+                <div>
+                    <span>Uptime</span>
+                    <strong>99.98%</strong>
+                </div>
+                <div>
+                    <span>Security</span>
+                    <strong>0 breaches</strong>
+                </div>
+                <div>
+                    <span>Deploy Pace</span>
+                    <strong>3/day</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="details" aria-label="Timeline highlights">
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-label">2024</span>
+                    <p>Scaled platform to handle 5x traffic with no downtime.</p>
+                    <strong>5x</strong>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-label">2021</span>
+                    <p>Implemented full catops automation and monitoring.</p>
+                    <strong>87%</strong>
+                </div>
             </div>
         </section>
 

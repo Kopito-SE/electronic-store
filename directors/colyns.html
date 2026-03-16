@@ -3,128 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COLYNS KIPLANGAT | KEPKOF Director Profile</title>
+    <title>COLYNS KIPLANGAT | Chief Executive Officer</title>
+    <link rel="stylesheet" href="../css/directors.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            padding: 20px;
-            color: #333;
-        }
-
-        .container {
-            max-width: 700px;
-            margin: 60px auto 0;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
-        }
-
-        .profile-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 15px;
-            border: 4px solid #007bff;
-        }
-
-        h1 {
-            margin-bottom: 6px;
-        }
-
-        .title {
-            color: #007bff;
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        .details {
-            margin: 20px 0;
-        }
-
-        .detail-item {
-            margin: 12px 0;
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        .label {
-            font-weight: bold;
-            color: #555;
-        }
-
-        .value {
-            color: #666;
-            margin-left: 10px;
-        }
-
-        .actions {
-            margin-top: 22px;
+        .modern-profile {
             display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 32px;
         }
-
-        .btn {
-            display: inline-block;
-            text-decoration: none;
-            border-radius: 8px;
-            padding: 10px 14px;
-            font-weight: 600;
+        .avatar-panel {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 18px;
+            align-items: center;
         }
-
-        .btn-primary {
-            background: #007bff;
-            color: #fff;
+        .avatar-frame {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            padding: 5px;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.8), rgba(248, 113, 113, 0.85));
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
         }
-
-        .btn-secondary {
-            background: #e5e7eb;
-            color: #111827;
+        .avatar-frame img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3px solid rgba(2, 6, 23, 0.9);
+            object-fit: cover;
+        }
+        .key-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
+        }
+        .key-card span {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .key-card strong {
+            display: block;
+            margin-top: 6px;
+            font-size: 1.8rem;
+            color: var(--text-primary);
+        }
+        .timeline {
+            display: grid;
+            gap: 12px;
+        }
+        .timeline-item {
+            padding: 18px;
+            border-radius: 18px;
+            background: var(--bg-panel);
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .timeline-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+        }
+        .timeline-item strong {
+            font-size: 1.4rem;
+            color: var(--primary);
+        }
+        @media (max-width: 640px) {
+            .avatar-panel {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
-    <main class="container">
+    <main class="profile-shell modern-profile">
         <header class="profile-header">
-            <img src="../images/chiefexecutive.jpg" alt="COLYNS KIPLANGAT" class="profile-img">
-            <h1>COLYNS KIPLANGAT</h1>
-            <p class="title">Chief Executive Officer</p>
+            <div class="avatar-panel">
+                <div class="avatar-frame">
+                    <img src="../images/chiefexecutive.jpg" alt="COLYNS KIPLANGAT">
+                </div>
+                <div>
+                    <h1>COLYNS KIPLANGAT</h1>
+                    <p class="title">Chief Executive Officer</p>
+                    <p class="bio">Strategic vision and culture custodian, guiding KEPKOF through customer-first expansion.</p>
+                </div>
+            </div>
         </header>
 
-        <section class="details" aria-label="Profile details">
+        <section class="details" aria-label="Contact &amp; experience">
             <div class="detail-item">
-                <span class="label">Email:</span>
+                <span class="label">Email</span>
                 <span class="value">colyns@kepkof.com</span>
             </div>
             <div class="detail-item">
-                <span class="label">Phone:</span>
-                <span class="value">+254 702 432 344</span>
+                <span class="label">Phone</span>
+                <span class="value">+254 730 555 888</span>
             </div>
             <div class="detail-item">
-                <span class="label">Department:</span>
-                <span class="value">Executive Leadership</span>
+                <span class="label">Location</span>
+                <span class="value">Nairobi, Kenya</span>
             </div>
             <div class="detail-item">
-                <span class="label">Experience:</span>
-                <span class="value">5+ Years in Electronics Leadership</span>
+                <span class="label">Experience</span>
+                <span class="value">18 years leading retail, partnerships, and governance</span>
+            </div>
+        </section>
+
+        <section class="details" aria-label="Leadership focus">
+            <div class="detail-item">
+                <span class="label">Vision</span>
+                <span class="value">Crafting the roadmap for trust and innovation across every customer touchpoint.</span>
             </div>
             <div class="detail-item">
-                <span class="label">Bio:</span>
-                <span class="value">Strategic leader focused on sustainable growth, customer value, and business innovation.</span>
+                <span class="label">People</span>
+                <span class="value">Fosters bold teams committed to growth, accountability, and joy in service.</span>
+            </div>
+        </section>
+
+        <section class="details" aria-label="Impact highlights">
+            <div class="detail-item">
+                <span class="label">Transformation</span>
+                <span class="value">Led a 3-year growth blueprint that doubled store footprint and revenue.</span>
+            </div>
+            <div class="detail-item">
+                <span class="label">Culture</span>
+                <span class="value">Established a leadership council steering ESG, ethics, and customer trust.</span>
+            </div>
+        </section>
+
+        <section class="details" aria-label="Live metrics">
+            <div class="key-card">
+                <div>
+                    <span>Growth</span>
+                    <strong>120%</strong>
+                </div>
+                <div>
+                    <span>Loyalty</span>
+                    <strong>97%</strong>
+                </div>
+                <div>
+                    <span>Retention</span>
+                    <strong>89%</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="details" aria-label="Timeline highlights">
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-label">2025</span>
+                    <p>Launched the KEPKOF Future Council to incubate new partnerships and experiences.</p>
+                    <strong>+120%</strong>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-label">2022</span>
+                    <p>Instituted a governance platform aligning ESG, customer care, and operational excellence.</p>
+                    <strong>+89%</strong>
+                </div>
             </div>
         </section>
 
