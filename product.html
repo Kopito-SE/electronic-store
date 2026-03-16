@@ -6,160 +6,136 @@
   <title>KEPKOF ELECTRONIC E BUSINESS - Product Details</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-  :root {
-      --bg: #030712;
-      --panel: #0b1220;
-      --muted: #94a3b8;
-      --text: #f8fafc;
-      --primary: #38bdf8;
-      --primary-dark: #0ea5e9;
-      --gradient: linear-gradient(135deg, #030712 0%, #0b1220 60%, #05070c 100%);
-      --border-soft: rgba(255, 255, 255, 0.12);
+    :root {
+      --card: #ffffff;
+      --muted: #6b7280;
+      --text: #111827;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --border: #e5e7eb;
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
-      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: var(--gradient);
+      font-family: Arial, sans-serif;
+      background: linear-gradient(160deg, #f8fafc 0%, #e2e8f0 100%);
       color: var(--text);
       min-height: 100vh;
     }
 
     .page {
-      width: min(1200px, 92vw);
+      max-width: 1100px;
       margin: 0 auto;
-      padding: clamp(1.5rem, 3vw, 2.5rem);
+      padding: 24px;
     }
 
     .top-nav {
       display: flex;
+      gap: 12px;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 1.5rem;
+      margin-bottom: 20px;
     }
 
     .link-btn {
-      border-radius: 999px;
-      padding: 0.65rem 1.25rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.35);
-      color: var(--text);
       display: inline-flex;
       align-items: center;
-      gap: 0.45rem;
+      gap: 8px;
       text-decoration: none;
+      color: var(--accent);
+      border: 1px solid var(--border);
+      background: #fff;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-weight: 600;
     }
 
     .layout {
-      background: var(--panel);
-      border-radius: 30px;
-      padding: clamp(1.5rem, 3vw, 2.5rem);
-      box-shadow: 0 40px 60px -30px rgba(15, 23, 42, 0.9);
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: clamp(1.5rem, 3vw, 3rem);
-      align-items: center;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      background: var(--card);
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      padding: 24px;
     }
 
     .image-box {
-      border-radius: 20px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
       overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.04);
-      padding: clamp(0.5rem, 2vw, 1rem);
+      background: #f8fafc;
     }
 
     .image-box img {
-      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 16px;
+      display: block;
+      max-height: 420px;
     }
 
     .title {
-      font-size: clamp(2rem, 3vw, 2.6rem);
-      margin-bottom: 0.35rem;
-      font-weight: 800;
-      color: var(--text);
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      margin-bottom: 10px;
     }
 
     .price {
-      font-size: clamp(1.5rem, 2vw, 1.9rem);
-      color: var(--primary);
+      color: var(--accent);
+      font-size: 1.5rem;
       font-weight: 700;
-      margin-bottom: 0.5rem;
+      margin-bottom: 14px;
     }
 
     .meta {
       color: var(--muted);
-      line-height: 1.7;
-      margin-bottom: 1.25rem;
-    }
-
-    .product-kernel {
-      background: #f6f8fb;
-      border-radius: 20px;
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-      border: 1px dashed var(--border-soft);
-      font-size: 0.9rem;
-      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 18px;
     }
 
     .actions {
       display: flex;
+      gap: 12px;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
     }
 
     .btn {
-      padding: 0.9rem 1.6rem;
-      border-radius: 999px;
       border: none;
+      border-radius: 10px;
+      padding: 12px 18px;
       font-weight: 700;
-      font-size: 0.95rem;
       cursor: pointer;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
     .btn-primary {
-      background: var(--primary);
+      background: var(--accent);
       color: #fff;
-      box-shadow: 0 10px 25px rgba(249, 115, 22, 0.35);
     }
 
     .btn-primary:hover {
-      background: var(--primary-dark);
-      transform: translateY(-1px);
+      background: var(--accent-hover);
     }
 
     .btn-secondary {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.2);
-      color: #f8fafc;
+      background: #f3f4f6;
+      color: #111827;
+      text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      letter-spacing: 0.02em;
-      padding: 0.85rem 1.4rem;
+      justify-content: center;
     }
 
     .notice {
-      margin-top: 10px;
-      font-size: 0.9rem;
-      border-radius: 12px;
-      padding: 0.85rem 1rem;
-      background: rgba(16,185,129,0.2);
-      color: #bbf7d0;
-      border: 1px solid rgba(16,185,129,0.5);
+      margin-top: 16px;
+      color: #065f46;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      border-radius: 10px;
+      padding: 10px 12px;
       display: none;
     }
 
@@ -167,144 +143,10 @@
       display: block;
     }
 
-    .product-highlights {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 0.9rem;
-      margin-top: 1.5rem;
-    }
-
-    .product-highlight {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.65rem;
-      background: rgba(255,255,255,0.03);
-      border-radius: 16px;
-      padding: 0.8rem 1rem;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .product-highlight i {
-      color: var(--primary);
-      font-size: 1.2rem;
-      margin-top: 0.1rem;
-    }
-
-    .product-highlight strong {
-      display: block;
-      font-size: 0.95rem;
-      margin-bottom: 3px;
-    }
-
-    .product-highlight span {
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    .product-hero {
-      margin-bottom: 2rem;
-      padding: clamp(1.5rem, 3vw, 2.5rem);
-      border-radius: 28px;
-      background: linear-gradient(195deg, #0f172a 0%, #1e293b 40%, #0f172a 100%);
-      color: #f8fafc;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.25rem;
-      align-items: center;
-      box-shadow: 0 30px 60px rgba(2, 6, 23, 0.45);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .product-hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(circle at top right, rgba(248, 250, 252, 0.15) 0%, transparent 45%);
-      pointer-events: none;
-    }
-
-    .product-hero__content {
-      position: relative;
-      z-index: 1;
-      max-width: 520px;
-    }
-
-    .product-hero h1 {
-      font-size: clamp(2.2rem, 3.5vw, 3rem);
-    }
-
-    .product-hero__badges {
-      margin-top: 1.2rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-    }
-
-    .product-hero__badges span {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 0.45rem 0.85rem;
-      border-radius: 999px;
-      font-size: 0.85rem;
-    }
-
-    .product-hero__gallery {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.7rem;
-    }
-
-    .product-hero__gallery img {
-      border-radius: 18px;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border: 2px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 15px 25px rgba(15, 23, 42, 0.4);
-    }
-
-    @media (max-width: 640px) {
-      .product-hero__gallery {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      }
-    }
-
     @media (min-width: 900px) {
-      .top-nav {
-        justify-content: space-between;
-      }
-    }
-
-    @media (max-width: 900px) {
-      .top-nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.75rem;
-      }
       .layout {
-        grid-template-columns: 1fr;
-      }
-      .actions {
-        flex-direction: column;
-      }
-      .actions .btn {
-        width: 100%;
-        justify-content: center;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .top-nav a {
-        width: 100%;
-        justify-content: center;
-      }
-      .product-hero {
-        padding: 1rem;
-      }
-      .product-hero__gallery {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
       }
     }
   </style>
@@ -312,27 +154,9 @@
 <body>
   <main class="page">
     <nav class="top-nav" aria-label="Breadcrumb">
-      <a class="link-btn" href="index.html"><i class="fas fa-home" aria-hidden="true"></i> Home</a>
       <a class="link-btn" href="products.html"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back to Categories</a>
       <a class="link-btn" href="index.html#products">Home Products</a>
     </nav>
-    <section class="product-hero" aria-label="Product showcase">
-      <div class="product-hero__content">
-        <p>KEPKOF Premium Selection</p>
-        <h1>Immersive gadgets curated for Kenyan creators</h1>
-        <p>Handpicked flagship TVs, laptops, phones, and audio gear. Experience vibrant displays, studio-level sound, and lightning-fast performance shipped with white-glove care.</p>
-        <div class="product-hero__badges">
-          <span>Fast delivery</span>
-          <span>Expert support</span>
-          <span>Authenticity guaranteed</span>
-        </div>
-      </div>
-      <div class="product-hero__gallery">
-        <img src="images/laptopweoffer.jpg" alt="Laptop spotlight" loading="lazy">
-        <img src="images/phonesweofer.jpg" alt="Phone collage" loading="lazy">
-        <img src="images/audioweofer.jpg" alt="Audio collection" loading="lazy">
-      </div>
-    </section>
 
     <section class="layout" aria-live="polite">
       <div class="image-box">
@@ -347,36 +171,6 @@
         <div class="actions">
           <button id="addToCartBtn" class="btn btn-primary" type="button">Add to Cart</button>
           <a class="btn btn-secondary" href="index.html#contact">Talk to Sales</a>
-        </div>
-        <div class="product-highlights">
-          <div class="product-highlight">
-            <i class="fas fa-shield-alt" aria-hidden="true"></i>
-            <div>
-              <strong>Verified stock</strong>
-              <span>Authentic units sourced from brand partners</span>
-            </div>
-          </div>
-          <div class="product-highlight">
-            <i class="fas fa-truck-loading" aria-hidden="true"></i>
-            <div>
-              <strong>Fast dispatch</strong>
-              <span>Ships within 48 hours across Nairobi</span>
-            </div>
-          </div>
-          <div class="product-highlight">
-            <i class="fas fa-headset" aria-hidden="true"></i>
-            <div>
-              <strong>Expert support</strong>
-              <span>Dedicated tech guide for every purchase</span>
-            </div>
-          </div>
-          <div class="product-highlight">
-            <i class="fas fa-hand-holding-dollar" aria-hidden="true"></i>
-            <div>
-              <strong>Safe payments</strong>
-              <span>Multiple gateways + cash on delivery</span>
-            </div>
-          </div>
         </div>
         <p id="statusMessage" class="notice" role="status" aria-live="polite"></p>
       </div>
