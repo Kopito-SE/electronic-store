@@ -1,12 +1,3 @@
-// Load navbar on all pages
-fetch("navbar.html")
-.then(response => response.text())
-.then(data => {
-    const navbarContainer = document.getElementById("navbar");
-    if (navbarContainer) {
-        navbarContainer.innerHTML = data;
-    }
-});
 /**
  * KEPKOF Electronics - Main JavaScript
  * Optimized for performance, accessibility, and mobile responsiveness
