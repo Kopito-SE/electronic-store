@@ -5,6 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KEPKOF ELECTRONIC E BUSINESS - Premium Electronics | Home</title>
   <link rel="stylesheet" href="css/products-styles.css">
+  <style>
+    body {
+      background: #030712;
+      color: #f8fafc;
+    }
+    .main-header {
+      background: rgba(2, 6, 23, 0.95);
+      box-shadow: 0 25px 40px rgba(0,0,0,0.7);
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+    .category-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .product-grid {
+      background: transparent;
+    }
+    .hero {
+      background: linear-gradient(135deg, rgba(3,7,18,0.95), rgba(7,11,30,0.9));
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 18px 35px rgba(0,0,0,0.8);
+    }
+    .card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .description, .price, .view-btn, .category-card p {
+      color: #d2d7e3;
+    }
+    .view-btn {
+      border-color: rgba(248,250,252,0.5);
+      color: #f8fafc;
+      transition: background 0.2s, color 0.2s;
+    }
+    .view-btn:hover {
+      background: rgba(248,250,252,0.2);
+      color: white;
+    }
+    @media (max-width: 640px) {
+      .category-nav a {
+        color: #f8fafc;
+      }
+      .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.5rem;
+      }
+    }
+  </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
